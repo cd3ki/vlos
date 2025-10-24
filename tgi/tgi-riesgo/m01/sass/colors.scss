@@ -1,0 +1,183 @@
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+/*---THEMES---*/
+.bgSilver {
+    @include bgcolor($color-blue);
+}
+
+// Backgrounds
+.bgNothing {
+    @include bgcolor($color-black50);
+
+    color: #fff;
+
+}
+
+.bgvideo {
+    @include bgimgsize(100px, "interfax/video-camera");
+    @include bgcolor(fade-out($color-green, 0.7) !important);
+}
+
+// bgColors
+.bgWhite {
+    @include bgcolor($color-white !important);
+}
+.bgWhite70 {
+    @include bgcolor(fade-out($color-white, 0.3) !important);
+}
+.bgWhite80 {
+    @include bgcolor(fade-out($color-white, 0.2) !important);
+}
+
+.bgGreenYellow {
+    @include bgcolor(fade-out($color-green-feed, 0.8) !important);
+}
+
+.bgBlue {
+    @include bgcolor($color-blue !important);
+}
+.bgBlueDark {
+    @include bgcolor($color-blue-dark !important);
+}
+
+.bgAqua {
+    @include bgcolor($color-aqua !important);
+}
+
+.bgGreen {
+    @include bgcolor($color-green !important);
+}
+
+
+.bgGold {
+    @include bgcolor($color-gold !important);
+}
+
+.bgPurple {
+    @include bgcolor($color-purple !important);
+}
+
+.bgPurpleLight {
+    @include bgcolor($color-purple-light !important);
+}
+
+.bgGoldDark {
+    @include bgcolor($color-gold-dark !important);
+}
+
+.bgGoldDarkest {
+    @include bgcolor($color-gold-darkest !important);
+}
+
+.bgSilver {
+    @include bgcolor($color-silver !important);
+}
+
+.bgSilverLight {
+    @include bgcolor($color-silver-light !important);
+}
+
+.bgOrange {
+    @include bgcolor($color-orange !important);
+}
+
+.bgOrangeDark {
+    @include bgcolor($color-orange-dark !important);
+}
+
+.bgMint {
+    @include bgcolor($color-mint !important);
+}
+
+.bgMintDark {
+    @include bgcolor($color-mint-dark !important);
+}
+
+.bgYellow {
+    @include bgcolor($color-yellow !important);
+}
+
+.bgYellowDark {
+    @include bgcolor($color-yellow-dark !important);
+}
+
+.bgRed {
+    @include bgcolor($color-red !important);
+}
+
+.bgGray {
+    @include bgcolor($color-gray !important);
+}
+.bgGrayLight {
+    @include bgcolor($color-gray-light !important);
+}
+.bgGrayDark {
+    @include bgcolor($color-gray-dark !important);
+}
+
+.bgStep01 {
+    @include bgcolor($color-step-01 !important);
+}
+.bgStep02 {
+    @include bgcolor($color-step-02 !important);
+}
+.bgStep03 {
+    @include bgcolor($color-step-03 !important);
+}
+.bgStep04 {
+    @include bgcolor($color-step-04 !important);
+}
+.bgStep05 {
+    @include bgcolor($color-step-05 !important);
+}
+.bgStep06 {
+    @include bgcolor($color-step-06 !important);
+}
+.bgStep07 {
+    @include bgcolor($color-step-07 !important);
+}
+
+// Text colors
+.txNormal {
+    color: $color-font;
+}
+
+.txWhite {
+    color: $color-white;
+}
+
+
+
+.txBlue {
+    color: $color-blue;
+}
+
+
+.txAqua {
+    color: $color-aqua;
+}
+
+.txGreen {
+    color: $color-green;
+}
+
+.txYellowDark {
+    color: $color-yellow-dark;
+}
+
+.txGold {
+    color: $color-gold;
+}
+
+.txPurple{
+    color: $color-purple;
+}
+
+.txMint {
+    color: $color-mint;
+}
+
+.txMintDark {
+    color: $color-mint-dark;
+}

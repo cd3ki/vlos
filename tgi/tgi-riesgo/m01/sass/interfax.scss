@@ -1,0 +1,161 @@
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'abstracts/placeholders';
+
+body {
+    background-image: url('../images/course/bg-ova.png');
+}
+
+.container {
+    > div {
+        @include bgcolor($color-black);
+    }
+    #x-content {
+        @include bgcolor($color-transparent);
+    }
+
+    // TITLE + BREAD
+    .dk-breadcrumb {
+        @include interfax;
+        @include boxshadow;
+        top: 1em;
+
+        min-width: 10em;
+        width: 90%;
+        margin: 0 5%;
+        height: 3em;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        border-radius: 2em;
+
+        @include bgcolor($color-white);
+        @include txcolor($color-blue);
+        
+        h4 {
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-style: normal;
+            padding: 0.25em 1em .25em 0.5em;
+            margin: 0;
+            letter-spacing: 1.5px;
+            font-size: 1.25em;
+        }
+
+        #breadcrumb {
+            flex: auto;
+            text-align: start;
+            overflow: hidden;
+        }
+
+        // MENU
+        .dk-icon-menu {
+            padding: .65em 1.5em .5em;
+            border-radius: 0.75em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include bgcolor($color-transparent);
+            @include txcolor($color-blue);
+        }
+
+        // BADGES
+        .dk-goals {
+            @include bgcolor($color-transparent);
+            
+            width: 9em;
+            height: 2.5em;
+            
+            color: #fff;
+
+            .dk-goal {
+                width: 2.5em;
+                height: 2.5em;
+                display: inline-block;
+
+                &:nth-child(1), {
+                    @include bgimgsize(100%, "interfax/badge-n01");
+                }
+                &:nth-child(2), {
+                    @include bgimgsize(100%, "interfax/badge-n02");
+                }
+                &:nth-child(3), {
+                    @include bgimgsize(100%, "interfax/badge-n03");
+                }
+            }
+
+            .dk-goal-ok {
+                &:nth-child(1), {
+                    @include bgimgsize(100%, "interfax/badge-n01-ok");
+                }
+                &:nth-child(2), {
+                    @include bgimgsize(100%, "interfax/badge-n02-ok");
+                }
+                &:nth-child(3), {
+                    @include bgimgsize(100%, "interfax/badge-n03-ok");
+                }
+            }
+            
+            .dk-goal-blank {
+                @include bgimg("interfax/badge-blank");
+            }
+        }
+    }
+
+    // NAV
+    .dk-prev,
+    .dk-next,
+    .dk-prev-false,
+    .dk-next-false {
+        @extend %fixed;
+        top: 50%;
+        margin-top: -2em;
+        width: 4em;
+        height: 4em;
+        @include bgcolor($color-transparent);
+        @include txcolor($color-blue);
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dk-prev,
+    .dk-prev-false {
+        left: 1em;
+    }
+    .dk-next,
+    .dk-next-false {
+        right: 1em;
+    }
+
+    // PROGRESS BAR
+    #progressBar {
+        @extend %fixed;
+        bottom: 2px;
+        height: 4px;
+        width: 100%;
+        @include bgcolor($color-white);
+    }
+
+    #progressBar div {
+        width: 0;
+        height: 100%;
+        @include bgcolor($color-blue);
+        line-height: 22px;
+        text-align: right;
+    }    
+
+    // PROGRESS PIE
+    .dk-progress {
+        @include boxshadow;
+        @include interfax;
+        @include bgcolor($color-white);
+        bottom: 2.5%;
+        right: 1%;
+        border-radius: 50%;
+    }
+}
+
+

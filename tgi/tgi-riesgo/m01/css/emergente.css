@@ -1,0 +1,132 @@
+.dk-menu-dialog,
+.vBeam, .dk-menu-dialog .boxPop .closePop,
+.vBeam .boxPop .closePop, .feedBox .txFeed button, .dk-menu-dialog .closePopUp {
+  position: absolute; }
+
+.dk-menu-dialog .boxPop,
+.vBeam .boxPop, .feedBox {
+  position: relative; }
+
+.dk-menu-dialog,
+.vBeam {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  z-index: 4;
+  background-color: rgba(109, 136, 143, 0.95); }
+  .dk-menu-dialog.white,
+  .vBeam.white {
+    background-color: rgba(255, 255, 255, 0.5); }
+  .dk-menu-dialog.color,
+  .vBeam.color {
+    background-color: rgba(0, 9, 18, 0.5); }
+  .dk-menu-dialog.none,
+  .vBeam.none {
+    background-color: transparent; }
+  .dk-menu-dialog .boxPop,
+  .vBeam .boxPop {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
+    border-radius: 0.75em;
+    padding: 3.5em 2em 2em;
+    box-sizing: border-box; }
+    .dk-menu-dialog .boxPop .closePop,
+    .vBeam .boxPop .closePop {
+      top: 0;
+      right: 1.5em;
+      background-color: #3c6da4 !important;
+      color: #fff;
+      border-radius: 0 0 0.5em 0.5em;
+      width: 50px;
+      height: 50px;
+      z-index: 10000; }
+    .dk-menu-dialog .boxPop .namba,
+    .vBeam .boxPop .namba {
+      height: 18em;
+      border-radius: .5em 0 0 .5em; }
+    .dk-menu-dialog .boxPop .namba,
+    .vBeam .boxPop .namba {
+      height: 18em;
+      border-radius: .5em .5em 0 0; }
+      .dk-menu-dialog .boxPop .namba.top,
+      .vBeam .boxPop .namba.top {
+        height: auto;
+        border-radius: .5em .5em 0 0; }
+
+.feedBox {
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
+  border-radius: 0.75em;
+  color: #fff; }
+  .feedBox img {
+    width: 12em;
+    height: 8em;
+    margin-bottom: 1.25em; }
+  .feedBox .icon {
+    background-color: transparent;
+    width: 50%;
+    margin: 1em auto 0.5em;
+    padding: 1em; }
+  .feedBox.good {
+    background-color: #0085b0; }
+    .feedBox.good button {
+      color: #0085b0; }
+  .feedBox.bad {
+    background-color: #67439a; }
+    .feedBox.bad button {
+      color: #67439a; }
+  .feedBox .txFeed {
+    margin: 0;
+    padding: 2em 2em 3em; }
+    .feedBox .txFeed button {
+      left: 50%;
+      margin-left: -1.5em;
+      bottom: -1.5em;
+      width: 4em;
+      height: 4em;
+      border-radius: 2em;
+      background-color: #fff;
+      padding: .5em; }
+
+.dk-menu-dialog .dk-js-module {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+  min-height: 50px; }
+  .dk-menu-dialog .dk-js-module:nth-child(2) {
+    margin-top: 20%; }
+  .dk-menu-dialog .dk-js-module .submodule {
+    width: 3em;
+    height: 3em;
+    background-color: #fff;
+    color: #0085b0;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
+    font-weight: 700;
+    border-radius: 50%;
+    margin: 0 .2em;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .dk-menu-dialog .dk-js-module a.submodule {
+    background-color: #0085b0;
+    color: #fff; }
+    .dk-menu-dialog .dk-js-module a.submodule:hover {
+      opacity: 1; }
+.dk-menu-dialog .closePopUp {
+  left: 50%;
+  top: 4em;
+  z-index: 10;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  color: #fff;
+  background-color: transparent;
+  margin-left: -1.5em;
+  border: 3px solid #fff; }
+
+/*# sourceMappingURL=emergente.css.map */

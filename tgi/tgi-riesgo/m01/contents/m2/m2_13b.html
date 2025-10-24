@@ -1,0 +1,113 @@
+<!-- SCENE 01 -->
+<div class="bgKen bg213"></div>
+<div class="row middle-xs center-xs">
+    <div class="col-5"></div>
+    <div class="col-5">
+        <div class="actSelect txLeft">
+            <h4>Para realizar la valoración de un riesgo debemos tener en cuenta 2 variables: 
+                <label class="dropdown" data-value="3">
+                    <select>
+                        <option value="0"></option>
+                        <option value="1">Alto vs. probabilidad</option>
+                        <option value="2">Humano Vs. impacto</option>
+                        <option value="3">Impacto Vs. Probabilidad</option>
+                        <option value="4">Reputacional Vs. Financiero</option>                        
+                    </select>                      
+                </label>
+            </h4>
+
+            <div class="txCenter mt2 mb1">
+                <button class="verificar" onclick="verifyDropDown();">
+                    <h5 style="margin: 0;">VERIFICAR</h5>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // -->
+
+<!-- GOOD -->
+<div class="x-feedback_good toukai">
+    <div class="vBeam color animated fadeIn">
+        <div class="row middle-xs center-xs h100">
+            <div class="col-4">
+                <!-- // -->
+                <div class="feedBox good txWhite txCenter animated fadeIn">
+                    <div class="txFeed">
+                        <img src="images/interfax/f-good.svg" width="">
+                        <br>
+                        <h4><b>¡Muy bien!</b></h4>
+                        <p>Para realizar la valoración de un riesgo debemos cruzar los ejes de Impacto y Probabilidad.</p>
+
+                        <button class="x-jump nextModule" data-jump="m2_13c" autofocus>
+                            <i class="fas fa-angle-right fa-3x"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- // -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // -->
+
+<!-- ./WRONG -->
+<div class="x-feedback_wrong toukai">
+    <div class="vBeam color animated fadeIn">
+        <div class="row middle-xs center-xs h100">
+            <div class="col-4">
+                <!-- // -->
+                <div class="feedBox bad txWhite txCenter animated fadeIn">
+                    <div class="txFeed">
+                        <img src="images/interfax/f-wrong.svg" width="">
+                        <br>
+                        <h4><b>¡Te has equivocado!</b></h4>
+
+                        <p>Recuerda que para valorar un riesgo debemos tener en cuenta su nivel de impacto vs. la probabilidad de que ocurra.</p><br>
+
+                        <button class="verify x-try_again">
+                            <i class="fas fa-redo fa-2x"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <!-- // -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // --> 
+
+<!-- /SCRIPT/ -->
+<script>
+    // ACT
+    $(".x-feedback_wrong").hide();
+    $(".x-feedback_good").hide();
+
+    function verifyDropDown() {
+        var corrects = 0;
+        $('.dropdown').each(function (index, element) {
+            if ($(element).data('value') == $(element).children('select').val()) {
+                corrects++;
+                $(element).addClass('disable');
+                $(element).children('select').addClass('disable').attr('disabled', 'disabled');
+                console.log(corrects);
+            } else {
+                $(element).children('select').addClass('fail');
+            }
+        });
+
+        if (corrects >= 1) {
+            $('.bgKen').addClass('bg306c');
+            $('.btnBye').addClass('toukai');
+            main.audioPlay("#correct_sound");
+            var t = setTimeout(function () {
+                $(".x-feedback_good").fadeTo("fast", 1);
+            }, 1 * 1000);
+            timers.push(t);
+        } else {
+            $(".x-feedback_wrong").fadeTo("fast", 1);
+            main.audioPlay("#incorrect_sound");
+        }
+    }
+</script>

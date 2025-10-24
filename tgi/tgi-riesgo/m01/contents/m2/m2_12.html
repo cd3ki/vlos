@@ -1,0 +1,72 @@
+<div class="row middle-xs center-xs bg200">
+    <div class="stepTag bgStep02 animated fadeInLeft delay1">
+        <img src="images/m2/m206-tg.svg">
+        <h5>Etapa 2</h5>
+    </div>
+
+    <div class="col-8 boxTxt animated fadeIn delay2 hAuto">
+        <div class="row middle-xs center-xs h100">
+            <div class="col">
+                <p class="animated fadeInUp delay3">Para diseñar  planes de gestión y mitigación de riesgos efectivos, es importante que nos familiaricemos con una serie de conceptos clave. <i>Haz clic sobre cada uno de los íconos para conocer las <b>Definiciones Clave y Las Estrategias de Respuesta al Riesgo</b> definidas por la organización.</i></p>
+
+                <div class="w90 mgCenter animated zoomIn delay5">
+                    <div class="x-svg"></div>
+                </div>
+
+                <!-- FinalFeedback -->
+                <div id="final_feed" class="toukai">
+                    <div class="feedMessage">
+                        <div class="text txLeft">
+                            <p><span class="x-username"></span>, ahora que conoces los conceptos clave del Modelo de Gestión de Riesgos, avanza a la <b>Etapa 3</b> y descubre cómo definimos la valoración de un riesgo.</p>
+                        </div>
+
+                        <div class="sugi animated wobble delay2">
+                            <button class="x-jump btnContinue" data-jump="m2_07" autofocus><i class="icon-i-continue"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!--//-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- x-emergente -->
+<div class="x-emergente"></div>
+
+<!-- CODE -->
+<script>
+    $(function() {
+        $('.x-svg').load('images/m2/m212.svg', function(data){
+            $('.x-area').click(function(){
+
+                var content = $(this).data('content');
+
+                $(".x-emergente").load("contents/" + content + ".html", function(response, status){
+                    if (status === 'success') {
+                        $('.x-emergente').html(response);
+                        $('.x-on_top_content').fadeIn();
+                    }
+                    else {
+                     console.log('Se presentó un error');
+                 }
+             });
+                
+                $(this).attr("class", "x-area viewed");
+                $(this).css('fill-opacity', '.4');
+
+                main.stopMedia();
+                main.audioPlay("#button_sound");
+
+                if ($('.x-area').length == $('.viewed').length) {
+                    var tid = setTimeout(function () {
+                        activities.activityFinished();
+                    }, 2000);
+
+                    timers.push(tid);
+                }
+            }); 
+        });
+
+    });
+</script>

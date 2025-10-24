@@ -1,0 +1,127 @@
+.container .dk-breadcrumb, .container .dk-prev,
+.container .dk-next,
+.container .dk-prev-false,
+.container .dk-next-false, .container #progressBar, .container .dk-progress {
+  position: fixed; }
+
+.container .dk-breadcrumb, .container .dk-progress {
+  z-index: 3; }
+
+body {
+  background-image: url("../images/course/bg-ova.png"); }
+
+.container > div {
+  background-color: #000; }
+.container #x-content {
+  background-color: transparent; }
+.container .dk-breadcrumb {
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
+  top: 1em;
+  min-width: 10em;
+  width: 90%;
+  margin: 0 5%;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 2em;
+  background-color: #fff;
+  color: #3c6da4; }
+  .container .dk-breadcrumb h4 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-style: normal;
+    padding: 0.25em 1em .25em 0.5em;
+    margin: 0;
+    letter-spacing: 1.5px;
+    font-size: 1.25em; }
+  .container .dk-breadcrumb #breadcrumb {
+    flex: auto;
+    text-align: start;
+    overflow: hidden; }
+  .container .dk-breadcrumb .dk-icon-menu {
+    padding: .65em 1.5em .5em;
+    border-radius: 0.75em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: #3c6da4; }
+  .container .dk-breadcrumb .dk-goals {
+    background-color: transparent;
+    width: 9em;
+    height: 2.5em;
+    color: #fff; }
+    .container .dk-breadcrumb .dk-goals .dk-goal {
+      width: 2.5em;
+      height: 2.5em;
+      display: inline-block; }
+      .container .dk-breadcrumb .dk-goals .dk-goal:nth-child(1) {
+        background-size: 100%;
+        background-image: url("../images/interfax/badge-n01.svg");
+        background-position: center center;
+        background-repeat: no-repeat; }
+      .container .dk-breadcrumb .dk-goals .dk-goal:nth-child(2) {
+        background-size: 100%;
+        background-image: url("../images/interfax/badge-n02.svg");
+        background-position: center center;
+        background-repeat: no-repeat; }
+      .container .dk-breadcrumb .dk-goals .dk-goal:nth-child(3) {
+        background-size: 100%;
+        background-image: url("../images/interfax/badge-n03.svg");
+        background-position: center center;
+        background-repeat: no-repeat; }
+    .container .dk-breadcrumb .dk-goals .dk-goal-ok:nth-child(1) {
+      background-size: 100%;
+      background-image: url("../images/interfax/badge-n01-ok.svg");
+      background-position: center center;
+      background-repeat: no-repeat; }
+    .container .dk-breadcrumb .dk-goals .dk-goal-ok:nth-child(2) {
+      background-size: 100%;
+      background-image: url("../images/interfax/badge-n02-ok.svg");
+      background-position: center center;
+      background-repeat: no-repeat; }
+    .container .dk-breadcrumb .dk-goals .dk-goal-ok:nth-child(3) {
+      background-size: 100%;
+      background-image: url("../images/interfax/badge-n03-ok.svg");
+      background-position: center center;
+      background-repeat: no-repeat; }
+    .container .dk-breadcrumb .dk-goals .dk-goal-blank {
+      background-image: url("../images/interfax/badge-blank.svg"); }
+.container .dk-prev,
+.container .dk-next,
+.container .dk-prev-false,
+.container .dk-next-false {
+  top: 50%;
+  margin-top: -2em;
+  width: 4em;
+  height: 4em;
+  background-color: transparent;
+  color: #3c6da4;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+.container .dk-prev,
+.container .dk-prev-false {
+  left: 1em; }
+.container .dk-next,
+.container .dk-next-false {
+  right: 1em; }
+.container #progressBar {
+  bottom: 2px;
+  height: 4px;
+  width: 100%;
+  background-color: #fff; }
+.container #progressBar div {
+  width: 0;
+  height: 100%;
+  background-color: #3c6da4;
+  line-height: 22px;
+  text-align: right; }
+.container .dk-progress {
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
+  background-color: #fff;
+  bottom: 2.5%;
+  right: 1%;
+  border-radius: 50%; }
+
+/*# sourceMappingURL=interfax.css.map */

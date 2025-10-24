@@ -1,0 +1,141 @@
+<!-- SCENE 01 -->
+<div class="bgKen bg213"></div>
+<div class="row middle-xs center-xs sc01">
+    <div class="col-4 animated fadeIn delay1 intro">
+        <!-- // -->
+        <div class="bgPurple card txWhite txCenter animated fadeIn delay1" style="border-radius: .75em;">
+            <div class="row center-xs start-xs h100 bgLogo pRelative">
+                <div class="col-10 center-xs">
+                    <div class="bgYellow w30" style="padding: 1em; border-radius: 0 0 1em 1em; margin: 0 auto;">
+                        <i class="fa fa-question-circle fa-4x"></i>
+                    </div>
+
+                    <div class="mt2 mb4">
+                        <h4 class="animated fadeIn delay2"><span class="x-username"></span>, Lee atentamente cada uno de los enunciados y luego haz clic sobre las listas desplegables de cada uno para seleccionar el término o concepto que los completa de forma correcta.</h4>
+                    </div>
+                </div>
+
+                <button class="buttonTut nextModule x-goTag" data-tag="clk01-13" onclick="main.stopMedia();" autofocus>
+                    <i class="icon-i-continue fa-2x"></i>
+                </button>
+            </div>
+        </div>
+        <!-- // -->
+    </div>
+</div>
+<!-- // -->
+
+<!-- SCENE 02 -->
+<div class="row middle-xs center-xs sc02 toukai">
+    <div class="col-5"></div>
+    <div class="col-5">
+        <div class="actSelect txLeft">
+            <h4>7 etapas que nos permiten identificar y gestionar posibles riesgos que puedan impactar la operación o el desempeño de la organización  <label class="dropdown" data-value="2">
+                    <select>
+                        <option value="0"></option>
+                        <option value="1">Riesgo absoluto</option>
+                        <option value="2">Modelo de Gestión de Riesgos</option>
+                        <option value="3">Modelo de riesgos</option>
+                        <option value="4">Definición de controles</option>
+                    </select>
+                </label>
+                .</h4>
+
+            <div class="txCenter mt2 mb1">
+                <button class="verificar" onclick="verifyDropDown();">
+                    <h5 style="margin: 0;">VERIFICAR</h5>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // -->
+
+<!-- GOOD -->
+<div class="x-feedback_good toukai">
+    <div class="vBeam color animated fadeIn">
+        <div class="row middle-xs center-xs h100">
+            <div class="col-4">
+                <!-- // -->
+                <div class="feedBox good txWhite txCenter animated fadeIn">
+                    <div class="txFeed">
+                        <img src="images/interfax/f-good.svg" width="">
+                        <br>
+                        <h4><b>¡Muy bien!</b></h4>
+                        <p>Estas 7 etapas hacen referencia al Modelo de Gestión de Riesgos.</p>
+
+                        <button class="x-jump nextModule" data-jump="m2_13a" autofocus>
+                            <i class="fas fa-angle-right fa-3x"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- // -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // -->
+
+<!-- ./WRONG -->
+<div class="x-feedback_wrong toukai">
+    <div class="vBeam color animated fadeIn">
+        <div class="row middle-xs center-xs h100">
+            <div class="col-4">
+                <!-- // -->
+                <div class="feedBox bad txWhite txCenter animated fadeIn">
+                    <div class="txFeed">
+                        <img src="images/interfax/f-wrong.svg" width="">
+                        <br>
+                        <h4><b>¡Te has equivocado!</b></h4>
+
+                        <p>Recuerda que el Modelo de Gestión de Riesgos consta de 7 etapas que  nos permiten identificar y gestionar posibles riesgos que puedan impactar la operación o el desempeño de la organización.</p><br>
+
+                        <button class="verify x-try_again">
+                            <i class="fas fa-redo fa-2x"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <!-- // -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // --> 
+
+
+
+<!-- /SCRIPT/ -->
+<script>
+    // ACT
+    $(".x-feedback_wrong").hide();
+    $(".x-feedback_good").hide();
+    main.stopMedia();
+
+    function verifyDropDown() {
+        var corrects = 0;
+        $('.dropdown').each(function (index, element) {
+            if ($(element).data('value') == $(element).children('select').val()) {
+                corrects++;
+                $(element).addClass('disable');
+                $(element).children('select').addClass('disable').attr('disabled', 'disabled');
+                console.log(corrects);
+            } else {
+                $(element).children('select').addClass('fail');
+            }
+        });
+
+        if (corrects >= 1) {
+            $('.bgKen').addClass('bg306b');
+            $('.btnBye').addClass('toukai');
+            main.audioPlay("#correct_sound");
+            var t = setTimeout(function () {
+                $(".x-feedback_good").fadeTo("fast", 1);
+            }, 1 * 1000);
+            timers.push(t);
+        } else {
+            $(".x-feedback_wrong").fadeTo("fast", 1);
+            main.audioPlay("#incorrect_sound");
+        }
+    }
+</script>

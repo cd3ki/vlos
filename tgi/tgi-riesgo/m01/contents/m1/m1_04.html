@@ -1,0 +1,70 @@
+<div class="row middle-xs center-xs bg104">
+
+    <div class="col-8">
+        <div class="animated fadeIn delay1 boxTxt mb1">
+            <p>¡Todos los colaboradores somos responsables de adoptar y cumplir la política de gestión de riesgos! <i>Haz clic en cada uno de los iconos y conoce otras responsabilidades asociadas.</i></p>
+        </div>
+
+        <div class="x-svg animated fadeIn delay3 mt2"></div>
+    </div>
+
+    <!-- FinalFeedback -->
+    <div id="final_feed" class="toukai">
+        <div class="vBeam none">
+            <div class="row middle-xs center-xs intro animated fadeIn delay1">
+                <div class="col-4">
+                    <!-- // -->
+                    <div class="bgGreen card txWhite txCenter animated fadeIn delay1" style="border-radius: .75em;">
+                        <div class="row center-xs start-xs h100 bgLogo pRelative">
+                            <div class="col-10 center-xs">
+                                <div class="mt3 mb3">
+                                    <p><span class="x-username"></span>, es importante que tengas en cuenta que cada empresa del Grupo Empresarial adoptó la política de gestión de riesgos y la adaptó según su realidad de negocio.</p>
+                                </div>
+                            </div>
+
+                            <button class="buttonTut x-jump" data-jump="m1_05" autofocus><i class="icon-i-continue fa-2x"></i></button>
+                        </div>
+                    </div>
+                    <!-- // -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // -->
+</div>
+
+<!-- x-emergente -->
+<div class="x-emergente"></div>
+
+<!-- CODE -->
+<script>
+    $(function() {
+        $('.x-svg').load('images/m1/m104.svg', function(data){
+            $('.x-area').click(function(){
+
+                var content = $(this).data('content');
+
+                $(".x-emergente").load("contents/" + content + ".html", function(response, status){
+                    if (status === 'success') {
+                        $('.x-emergente').html(response);
+                        $('.x-on_top_content').fadeIn();
+                    }
+                    else {
+                     console.log('Se presentó un error');
+                 }
+             });
+                
+                $(this).attr("class", "x-area viewed");
+                $(this).css('fill-opacity', '.4');
+
+                main.stopMedia();
+                main.audioPlay("#button_sound");
+
+                if ($('.x-area').length == $('.viewed').length) {
+                    activities.activityFinished();
+                }
+            }); 
+        });
+
+    });
+</script>

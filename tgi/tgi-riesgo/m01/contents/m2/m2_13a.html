@@ -1,0 +1,113 @@
+<!-- SCENE 01 -->
+<div class="bgKen bg213"></div>
+<div class="row middle-xs center-xs">
+    <div class="col-5"></div>
+    <div class="col-5">
+        <div class="actSelect txLeft">
+            <h4>El criterio de impacto 
+                <label class="dropdown" data-value="1">
+                    <select>
+                        <option value="0"></option>
+                        <option value="1">Humano</option>
+                        <option value="2">Financiero</option>
+                        <option value="3">Reputacional</option>
+                        <option value="4">Operativo</option>                        
+                    </select>                      
+                </label>
+            evalúa el impacto sobre la integridad física de trabajadores, contratistas y población.</h4>
+
+            <div class="txCenter mt2 mb1">
+                <button class="verificar" onclick="verifyDropDown();">
+                    <h5 style="margin: 0;">VERIFICAR</h5>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // -->
+
+<!-- GOOD -->
+<div class="x-feedback_good toukai">
+    <div class="vBeam color animated fadeIn">
+        <div class="row middle-xs center-xs h100">
+            <div class="col-4">
+                <!-- // -->
+                <div class="feedBox good txWhite txCenter animated fadeIn">
+                    <div class="txFeed">
+                        <img src="images/interfax/f-good.svg" width="">
+                        <br>
+                        <h4><b>¡Muy bien!</b></h4>
+                        <p>Cuando hablamos de la integridad física de trabajadores, contratistas y población, nos referimos a un riesgo de carácter Humano.</p>
+
+                        <button class="x-jump nextModule" data-jump="m2_13b" autofocus>
+                            <i class="fas fa-angle-right fa-3x"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- // -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // -->
+
+<!-- ./WRONG -->
+<div class="x-feedback_wrong toukai">
+    <div class="vBeam color animated fadeIn">
+        <div class="row middle-xs center-xs h100">
+            <div class="col-4">
+                <!-- // -->
+                <div class="feedBox bad txWhite txCenter animated fadeIn">
+                    <div class="txFeed">
+                        <img src="images/interfax/f-wrong.svg" width="">
+                        <br>
+                        <h4><b>¡Te has equivocado!</b></h4>
+
+                        <p>Recuerda que hablamos de un riesgo humano al referirnos a la integridad física de las personas.</p><br>
+
+                        <button class="verify x-try_again">
+                            <i class="fas fa-redo fa-2x"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <!-- // -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // --> 
+
+<!-- /SCRIPT/ -->
+<script>
+    // ACT
+    $(".x-feedback_wrong").hide();
+    $(".x-feedback_good").hide();
+
+    function verifyDropDown() {
+        var corrects = 0;
+        $('.dropdown').each(function (index, element) {
+            if ($(element).data('value') == $(element).children('select').val()) {
+                corrects++;
+                $(element).addClass('disable');
+                $(element).children('select').addClass('disable').attr('disabled', 'disabled');
+                console.log(corrects);
+            } else {
+                $(element).children('select').addClass('fail');
+            }
+        });
+
+        if (corrects >= 1) {
+            $('.bgKen').addClass('bg306c');
+            $('.btnBye').addClass('toukai');
+            main.audioPlay("#correct_sound");
+            var t = setTimeout(function () {
+                $(".x-feedback_good").fadeTo("fast", 1);
+            }, 1 * 1000);
+            timers.push(t);
+        } else {
+            $(".x-feedback_wrong").fadeTo("fast", 1);
+            main.audioPlay("#incorrect_sound");
+        }
+    }
+</script>

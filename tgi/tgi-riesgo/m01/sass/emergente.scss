@@ -1,0 +1,184 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/placeholders";
+
+// BG VIDEOBEAM
+.dk-menu-dialog,
+.vBeam {
+    @extend %absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    z-index: 4;
+    background-color: rgba(109, 136, 143, 0.95);
+
+    &.white {
+        @include bgcolor(fade-out($color-white, 0.5));
+    }
+
+    &.color {
+        @include bgcolor(fade-out(#000912, 0.5));
+    }
+
+    &.none {
+        @include bgcolor($color-transparent);
+    }
+
+    // POP
+    .boxPop {
+        @extend %relative;
+        width: 100%;
+        
+        @include bgcolor($color-white);
+        @include boxshadow;
+        @include bdradius;
+
+        padding: 3.5em 2em 2em;
+        box-sizing: border-box;
+
+        .closePop {
+            @extend %absolute;            
+            top: 0;
+            right: 1.5em;
+
+            @include bgcolor($color-blue !important);
+            @include txcolor($color-white);
+
+            border-radius: 0 0 0.5em 0.5em;
+
+            width: 50px;
+            height: 50px;
+            z-index: 10000;
+        }
+
+        .namba {
+            height: 18em;
+            border-radius: .5em 0 0 .5em;
+        }
+
+        .namba {
+            height: 18em;
+            border-radius: .5em .5em 0 0;
+
+            &.top {
+                height: auto;
+                border-radius: .5em .5em 0 0;
+            }
+        }
+    }
+}
+
+// FEEDBACK
+.feedBox {
+    @include boxshadow;
+    @include bdradius;
+    @include txcolor($color-white);
+    @extend %relative;
+
+    img {
+        width: 12em;
+        height: 8em;
+        margin-bottom: 1.25em;
+    }
+
+    .icon {
+        @include bgcolor($color-transparent);
+        width: 50%;
+        margin: 1em auto 0.5em;
+        padding: 1em;
+    }
+
+    &.good {
+        @include bgcolor($color-green-feed);
+
+        button {
+            color: $color-green-feed;
+        }       
+    }
+
+    &.bad {
+        @include bgcolor($color-magenta-feed);
+
+        button {
+            color: $color-magenta-feed;
+        }
+    }
+
+    .txFeed {
+        margin: 0;
+        padding: 2em 2em 3em;
+
+        button {
+            @extend %absolute;
+            left: 50%;
+            margin-left: -1.5em;
+            bottom: -1.5em;
+            width: 4em;
+            height: 4em;
+            border-radius: 2em;
+
+            @include bgcolor($color-white);
+
+            padding: .5em;
+        }
+    }
+}
+
+// TC
+.dk-menu-dialog{
+    .dk-js-module{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin: 1em;
+        min-height: 50px;
+
+        &:nth-child(2) {
+            margin-top: 20%;
+        }
+    
+        .submodule {
+            width: 3em;
+            height: 3em;
+            @include bgcolor($color-white);
+            @include txcolor($color-green-feed);
+            @include boxshadow;
+            font-weight: 700;
+            border-radius: 50%;
+            margin: 0 .2em;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        a.submodule {
+            @include bgcolor($color-green-feed);
+            @include txcolor($color-white);
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    .closePopUp {
+        @extend %absolute;
+        left: 50%;
+        top: 4em;
+        z-index: 10;
+        width: 3em;
+        height: 3em;
+        border-radius: 50%;
+        color: $color-white;
+        @include bgcolor($color-transparent);
+        margin-left: -1.5em;
+        border: 3px solid $color-white;
+    }
+}

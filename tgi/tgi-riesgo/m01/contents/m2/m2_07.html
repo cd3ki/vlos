@@ -1,0 +1,77 @@
+<div class="row middle-xs center-xs bg207">
+    <div class="stepTag bgStep03  animated fadeInLeft delay1">
+        <img src="images/m2/m207-tg.svg">
+        <h5>Etapa 3</h5>
+    </div>
+
+    <div class="col-4 boxTxt animated fadeIn delay2 ml3 mr2">
+        <div class="row middle-xs center-xs h100">
+            <div class="col txLeft">
+                <p class="animated fadeInUp delay2">Para llevar a cabo esta actividad deberemos <b>estimar la probabilidad</b> de que ocurra una situación de riesgo, así como <b>el impacto y las consecuencias</b> que esta pueda tener para la organización. <i>Haz clic sobre los conceptos para conocer sus significados.</i></p>
+
+                <!-- FinalFeedback -->
+                <div id="final_feed" class="toukai">
+                    <p class="animated fadeInUp">Esta información nos permitirá <b>establecer el nivel del riesgo y las acciones a implementar para su control</b>.</p>
+                
+                    <div class="feedMessage animated fadeIn delay2">
+                        <div class="text">
+                            <p><span class="x-username"></span>, ahora que conoces en qué consisten los ejes de probabilidad e impacto del mapa de calor, <i>avanza y observa como se valoran los riesgos dentro de la matriz.</i></p>
+                        </div>
+
+                        <div class="sugi animated wobble delay5">
+                            <button class="x-jump btnContinue" data-jump="m2_07_a" autofocus><i class="icon-i-continue"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!--//-->
+            </div>
+        </div>
+    </div>
+
+     <div class="col-5 animated zoomIn delay4">
+        <div class="x-svg mt5"></div>
+    </div>
+</div>
+
+<!-- x-emergente -->
+<div class="x-emergente"></div>
+
+<!-- CODE -->
+<script>
+    $(function() {
+        $('.x-svg').load('images/m2/m207.svg', function(data){
+            $('.x-area').click(function(){
+
+                var content = $(this).data('content');
+                var $viewed = $(this).data('view');
+
+                $(".x-emergente").load("contents/" + content + ".html", function(response, status){
+                    if (status === 'success') {
+                        $('.x-emergente').html(response);
+                        $('.x-on_top_content').fadeIn();
+                    }
+                    else {
+                     console.log('Se presentó un error');
+                 }
+             });
+                
+                $(this).attr("class", "x-area viewed");
+                $(this).css('fill-opacity', '.3');
+                console.log('#jump0'+$viewed);
+
+                main.stopMedia();
+                main.audioPlay("#button_sound");
+
+                if ($('.x-area').length == $('.viewed').length) {
+                    var tid = setTimeout(function () {
+                        activities.activityFinished();
+                        $('#equation').show('slow');
+                    }, 4000);
+
+                    timers.push(tid);
+                }
+            }); 
+        });
+
+    });
+</script>

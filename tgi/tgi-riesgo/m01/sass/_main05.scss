@@ -1,0 +1,1304 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/placeholders";
+
+button {
+    font-family: 'Open Sans Condensed', sans-serif;
+    border: none;
+    cursor: pointer;
+
+    @include transition($transition-properties...);
+
+    &:hover {
+        @include scalebtn($transform-properties...);
+        z-index: 2;
+    }
+    &:focus {
+        outline:0;
+    }
+}
+
+/* FeedMessage */
+.feedMessage {
+    // width: 100%;
+    margin: 1.25em -2.75em 0;
+
+    @extend %relative;
+
+    @include bgcolor($color-blue);
+    @include bdradius;
+
+    border: 3px solid $color-blue;
+
+    @include txcolor($color-white);
+
+    .important, .tip {
+        @extend %absolute;
+
+        top: -2px;
+        left: -3.5em;
+        width: 3.25em;
+        height: 3.25em;
+        border-radius: .5em;
+
+        @include bgimgsize(100%, "none");
+        border: 2px solid $color-blue;
+        @include bgcolor($color-blue);
+    }
+
+    .important {
+        @include bgimg("interfax/important");
+    }
+
+    .tip {
+        @include bgimg("interfax/tip");
+    }
+
+    .text {
+        margin: .125em 2em .125em 1.5em;
+    }
+
+    &.m209 {
+         @include bgimgsize(contain, "m2/m209");
+         background-position: 1em center;
+
+         display: flex;
+         align-items: center;
+         text-align: left;
+
+         .text {
+            margin: .125em 2.5em .125em 7em;
+        }
+    }
+}
+
+.sugi {
+    @extend %absolute;
+
+    top: calc(50% - 1.25em);
+    right: -1.25em;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.btnContinue {
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 3em;
+    padding: .5em;
+
+    @include bgcolor($color-white);
+    @include txcolor($color-blue);
+    @include boxshadow;
+}
+
+// M001 & M203
+.boxCover {
+    width: 100%;
+    height: 100vh;
+    @include bgimgpng(cover, "m5/m501");
+    @include boxshadow;
+    @extend %relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .boxT {
+        padding: 1em 2em .5em;
+        border-radius: 0.75em 0.75em 0 0;
+        @include bgcolor($color-blue);
+        margin-bottom: 0em;
+    }
+    
+}
+
+.bStart {
+    height: 2.5em;
+    @include bgcolor($color-white);
+
+    @include txcolor($color-blue);
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: .5em 1em;
+
+    border-radius: 1.75em;
+}
+
+// M002
+.tutBox {
+    @include boxshadow;
+    @include bgcolor($color-white);
+    @include bdradius;
+
+    padding: 1.25em 1.5em 1.5em;
+    width: 280px;
+
+    @extend %relative;
+
+    &.mBox02 {
+        margin: 4.5em auto;
+    }
+
+    &.mBox03 {
+        margin: 4.5em 5%;
+    }
+
+    &.mBox04 {
+        @extend %absolute;
+        top: 4.5em;
+        right: 4em;
+    }
+
+    &.mBox05 {
+        @extend %absolute;
+
+        bottom: 6.5em;
+        right: 2%;
+    }
+}
+
+// M003
+.badges {
+    display: flex;
+    align-items: flex-start;
+
+    button {
+        @include bgcolor($color-transparent);
+
+        &.disabled {
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+
+            cursor: inherit;
+        }
+
+        p {
+            margin: .5em 0;
+        }
+    }
+}
+
+.buttonTut {
+    @extend %absolute;
+    @include bgcolor($color-white);
+    @include txcolor($color-blue);
+    @include boxshadow;
+    
+    width: 3em;
+    left: 50%;
+    bottom: -1.5em;
+    margin-left: -1.5em;
+    padding: .5em;
+    border-radius: 2em;
+    text-align: center;
+    line-height: 1em;
+}
+
+// M101
+.boxTxt {
+    @include bgcolor(fade-out($color-white, 0.1) !important);
+    height: 85%;
+    padding: .25em 2em;
+    margin-top: 4em;
+
+}
+
+// M102A
+// M110
+.dragColors .dragword {
+    color: $color-white;
+    &:nth-child(1),
+    &:nth-child(5),
+    &:nth-child(9){
+        @include bgcolor($color-green);
+        border-color: $color-green;
+    }
+    &:nth-child(2),
+    &:nth-child(6){
+        @include bgcolor($color-gray);
+        border-color: $color-gray;
+    }
+    &:nth-child(3),
+    &:nth-child(7){
+        @include bgcolor($color-gold);
+        border-color: $color-gold;
+    }
+    &:nth-child(4),
+    &:nth-child(8){
+        @include bgcolor($color-silver);
+        border-color: $color-silver;
+    }
+}
+
+// BTN CIRCLE
+.btnCircle {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1em;
+    @include bgcolor($color-transparent);
+    border-radius: 50%;
+
+    @include bgimgsize(cover, "none");
+}
+
+.btnRectangle {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1em;
+    @include bgcolor($color-transparent);
+    @include bdradius;
+
+    @include bgimgsize(cover, "none");
+
+    //M303
+    &.m303 {
+        height: 140px;
+        border-radius: 0;
+    }
+
+    &.im303a {
+        @include bgimgsize(cover, "m3/m303a");
+
+        &.viewed {
+            @include bgimgsize(cover, "m3/m303a-view");
+            @include bgcolor($color-transparent);
+        }
+    }
+    &.im303b {
+        @include bgimgsize(cover, "m3/m303b");
+
+        &.viewed {
+            @include bgimgsize(cover, "m3/m303b-view");
+            @include bgcolor($color-transparent);
+        }
+    }
+    &.im303c {
+        @include bgimgsize(cover, "m3/m303c");
+
+        &.viewed {
+            @include bgimgsize(cover, "m3/m303c-view");
+            @include bgcolor($color-transparent);
+        }
+    }
+    &.im303d {
+        @include bgimgsize(cover, "m3/m303d");
+
+        &.viewed {
+            @include bgimgsize(cover, "m3/m303d-view");
+            @include bgcolor($color-transparent);
+        }
+    }
+    &.im303e {
+        @include bgimgsize(cover, "m3/m303e");
+
+        &.viewed {
+            @include bgimgsize(cover, "m3/m303e-view");
+            @include bgcolor($color-transparent);
+        }
+    }
+
+    //M305
+    &.m305 {
+        width: 12em;
+        height: 9em;
+        border-radius: 0;
+    }
+
+    &.im305a {
+        @include bgimgsize(cover, "m3/m305a");
+
+        &.viewed {
+            @include bgimgsize(cover, "m3/m305a-view");
+            @include bgcolor($color-transparent);
+        }
+    }
+    &.im305b {
+        @include bgimgsize(cover, "m3/m305b");
+
+        &.viewed {
+            @include bgimgsize(cover, "m3/m305b-view");
+            @include bgcolor($color-transparent);
+        }
+    }
+}
+
+.btnCircle,
+.btnRectangle {
+    &.viewed {
+        @include bgcolor(fade-out($color-white, 0.2));
+    }
+}
+
+// BOXCOMIC
+.boxComic {
+    height: 24em;
+    margin: .5em;
+
+    border: 2px solid $color-gray-light;
+
+    @include bgcolor(fade-out($color-gray, 0.7));
+    @include bdradius;
+
+    display: flex;
+    align-items: flex-end;
+
+    &.comic4 {
+        height: 13em;
+    }
+
+    .text {
+        width: 100% !important;
+        padding: .5em .75em;
+        font-style: italic;
+        @include bgcolor($color-white);
+        border-radius: 0 0 0.6em 0.6em;
+
+        p {
+            margin: 0;
+            font-size: .98em;
+            line-height: 1.15em;
+        }
+    }
+
+    // M001
+    &.im101a {
+        @include bgimgsize(cover, "m1/m101a");
+    }
+    &.im101b {
+        @include bgimgsize(cover, "m1/m101b");
+    }
+    &.im101c {
+        @include bgimgsize(cover, "m1/m101c");
+    } 
+    &.im101d {
+        @include bgimgsize(cover, "m1/m101d");
+    } 
+}
+
+
+// BGIMAGES
+.bgKen {
+    @extend %absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.bg303 {
+    @include bgimgpng(cover, "m3/m303-bg");
+}
+.bg305 {
+    @include bgimgpng(cover, "m3/m305-bg");
+}
+.bg305a {
+    @include bgimgpng(cover, "m3/m305a-bg");
+}
+.bg305b {
+    @include bgimgpng(cover, "m3/m305b-bg");
+}
+.bg306 {
+    @include bgimgpng(cover, "m3/m306-bg");
+}
+.bg307 {
+    @include bgimgpng(cover, "m3/m307-bg");
+}
+
+
+
+// M004
+.cardWhiteCases {
+    padding: 3em 2em 1.5em;
+
+    @include bgcolor($color-white);
+    @include bdradius;
+    @include boxshadow;
+
+    .statementQ {
+        @include bgcolor($color-blue);
+        @include txcolor($color-white);
+        border-top-left-radius: 0.75em;
+        border-top-right-radius: 0.75em;
+
+        text-align: left;
+        margin: -3em -2em 1em;
+        border-bottom: 3px solid $color-blue;
+        padding: 2em 2.25em .5em 12em;
+
+        h4 {
+            margin-bottom: .25em;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+        &.im002{
+            @include bgimgsize(10em, "m0/m002");
+        }
+        
+
+        &.im002 {
+            background-position: left top;
+        }
+    }
+
+    ul.options {
+        li.answnamba {
+            @include bgimgsize(30px, "interfax/selection-none");
+            background-position: 0.25em 0.75em;
+            border-bottom: 2px solid $color-blue;
+            padding: .75em .75em .75em 2.25em;
+            cursor: pointer;
+        
+            &:last-child { 
+                border: none;
+            }
+
+            &.qselected {
+                @include bgimg("interfax/selection-point");
+                border: 2px solid fade-out($color-blue, 0.5);
+                @include bdradius;
+            }
+        }
+    }
+}
+//
+.wordsearch {
+    .boxClue {
+        padding: 1em;
+        @include bgcolor($color-white);
+        @include bdradius;
+
+        h4 {
+            @include bgcolor($color-blue);
+            @include txcolor($color-white);
+            margin: -1em -1em 0;
+            padding: .5em;
+            border-bottom: 2px solid $color-blue;
+        }
+
+        .ws-words {
+            margin: 0 !important;
+
+            li {
+                border-bottom: 2px solid $color-blue;
+                list-style: none;
+                padding: 0.5em 0.75em;
+            
+                &.acerto {
+                    @include bgcolor(fade-out($color-black, 0.9));
+                    @include bgimgsize(30px, "interfax/check");
+                    background-position: 98% 90%;
+                }
+            }
+        }
+    }
+
+    .ws-area {
+        margin: 0;
+        padding: 20px;
+        display: inline-block;
+
+        @include bdradius;
+        @include bgcolor($color-white);
+
+        -moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+
+        .ws-row {
+            line-height: 0;
+        }
+
+        .ws-col {
+            cursor: pointer;
+        }
+
+        .ws-col.ws-selected {
+            background: #eee;
+        }
+
+        .ws-found {
+            background-color: #e0b85d;
+            color: $color-white;
+        }
+    }
+}
+
+// M102
+.tiPop {
+    h1, h2, h4 {
+        color: $color-aqua;
+    }
+
+    h1, h2 {
+        font-weight: 700;
+        margin: 0; 
+    }
+    h4 {
+        margin: .25em 0; 
+    }
+}
+
+.iconMenu {
+    padding: 1em;
+    border-radius: 3em;
+    margin: 1.5em auto;
+    width: 4em;
+    height: 4em;
+}
+
+// M105
+.goFoward {
+    height: 2em;
+    width: 12em;
+    cursor: pointer;
+    background-color: #46b978;
+
+    border-radius: .5em;
+    color: #fff;
+    padding: 0.5em;
+    text-align: center;
+    align-items: center;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s; 
+
+    &.retroB {
+        padding: .75em 3em;
+        font-size: .8em;
+    }
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.actSelect {
+    @include bgcolor($color-white);
+    @include bdradius;
+
+    border: 3px solid #46b978;
+    padding: 1.25em 2em 0.2em;
+
+    ol > li {
+        margin: 0.5em 0 1em;
+    }
+
+    h4 {
+        line-height: 1.75em;
+    }
+
+    label.dropdown {
+        display: inline-block;
+        position: relative;
+
+        &:after {
+            content:"\f107 ";
+            font-family: 'Font Awesome 5 Free';
+            color: $color-green;
+            width: 22px;
+            height: 100%;
+            position: absolute;
+            top: 4px;
+            right: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        select {
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 1em;
+            letter-spacing: 0.02em;
+            padding: .25em 1.4em .25em .5em;
+            border-radius: .5em;
+            border: 0;
+            @include bgcolor(fade-out($color-green, 0.9));
+
+           -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+
+            &.fail {
+                border: 2px solid $color-purple-light;
+            }
+        }
+
+        &.disable {
+            @include bgcolor($color-transparent);
+
+            select {
+                @include bgcolor(fade-out($color-blue, 0.9));
+                color: $color-blue;
+                font-weight: 700;
+                border: none;
+            }
+
+            &:after {
+                content:"";
+            }
+        }
+    } 
+}
+
+
+// M102 - ACCORDION
+.accordion {
+    .accEntry {
+        padding: .125em 1.25em .25em;
+        width: 86%;
+        margin: 0 auto;
+    }
+
+    .accBtn {
+        letter-spacing: 1px;
+        text-align: left;
+        color: $color-gray-dark;
+        @include bgcolor($color-transparent);
+
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        
+        border-bottom: 2px solid $color-gray-light;
+        display: inline-block;
+        margin: 2px;
+
+        @include bgimgsize(30px, "none");
+        background-position: 95% center;
+
+        &.m102a {
+            @include bgimg("m1/m102a");
+        }
+        &.m102b {
+            @include bgimg("m1/m102b");
+        }
+        &.m102c {
+            @include bgimg("m1/m102c");
+        }
+        &.m102d {
+            @include bgimg("m1/m102d");
+        }
+        &.m102e {
+            @include bgimg("m1/m102e");
+        }
+
+        h5 {
+            display: inline-block;
+            line-height: 0;
+            padding: 0 1em;
+            font-weight: 700;
+        }
+
+        &.viewed {
+            @include bgcolor(fade-out($color-gold, 0.85));
+        }
+    }
+}
+
+.boxComic {
+    height: 24em;
+    margin: .5em;
+
+    border: 2px solid $color-gray-light;
+
+    @include bgcolor(fade-out($color-gray, 0.7));
+
+    display: flex;
+    align-items: flex-end;
+
+    @extend %relative;
+
+    .text {
+        width: 100% !important;
+        padding: .5em .75em;
+        font-style: italic;
+        @include bgcolor($color-white);
+
+        p {
+            margin: 0;
+            font-size: .98em;
+            line-height: 1.15em;
+        }
+    }
+
+    // M106
+    &.im210a_01 {
+        @include bgimgsize(cover, "m2/m210a_01");
+    }
+
+    &.im210a_02 {
+        @include bgimgsize(cover, "m2/m210a_02");
+    }
+
+    &.im210a_03 {
+        @include bgimgsize(cover, "m2/m210a_03");
+    }
+
+    
+}
+
+// 
+.cardWhite {
+    padding: 3em 3em 2em;
+
+    @include bgcolor($color-white);
+
+    .statementQ {
+        @include bgcolor($color-gold);
+        @include txcolor($color-white);
+
+        text-align: left;
+        margin: -3em -3.75em 1.5em;
+        padding: 2em 3.75em 0;
+
+        h4 {
+            margin-bottom: .25em;
+        }
+
+        p {
+            margin-top: 0;
+        }
+    }
+
+    ul.options {
+        li.answnamba {
+            @include bgimgsize(30px, "interfax/selection-none");
+            background-position: 0.25em center;
+            border-bottom: 2px solid fade-out($color-green, 0.5);
+            padding: .75em .75em .75em 2.25em;
+            cursor: pointer;
+
+            &.qselected {
+                @include bgimg("interfax/selection-point");
+                border: 2px solid fade-out($color-green, 0.5);
+                @include bdradius;
+            }
+        
+            &:first-child { 
+                border-top: 2px solid fade-out($color-green, 0.5);
+            }
+        }
+    }
+
+    .qChoice {
+        .ansNamba {
+            @include bgimgsize(30px, "interfax/selection-none");
+            background-position: 0.25em center;
+            border-bottom: 2px solid fade-out($color-green, 0.5);
+            padding: .75em .75em .75em 2.25em;
+            cursor: pointer;
+
+            &.q-selected {
+                @include bgimg("interfax/selection-point");
+                border: 2px solid fade-out($color-green, 0.5);
+                @include bdradius;
+            }
+        }
+
+        & div:nth-of-type(2){
+            border-top: 2px solid fade-out($color-green, 0.5);
+        }
+    }
+}
+
+
+
+// M403
+.bdDashed {
+    outline: 2px dashed $color-gray;
+    box-sizing: border-box;
+
+    h4 {
+        margin: .25em 1em.4em;
+    }
+
+    button {
+        margin-bottom: .25em;
+    }
+}
+
+
+
+/* EVA */
+
+
+h3.actTitle {
+    margin: -.5em -2.75em 1em;
+    padding: 1em 3em .75em;
+    border-bottom: 4px solid #f4f9ff;
+    background-color: #0085b0;
+    color: $color-white;
+    font-size: 1.5em;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+
+
+.qChoice {
+    .ansNamba {
+        background: url('../images/interfax/aNone.svg') no-repeat scroll 0.25em center / 30px 30px transparent;
+        border-bottom: 2px solid #efefef;
+        cursor: pointer;
+        padding: 10px 15px 10px 45px;
+    }
+
+    div:nth-child(2) { 
+        border-top: 2px solid #efefef;
+    }
+
+    div.q-selected {
+        background: url('../images/interfax/aSelected.svg') no-repeat scroll 0.25em center/30px 30px transparent !important;
+        border: 2px solid #0085b0 !important;
+        border-radius: 6px !important;
+    }
+    
+    .multiple {
+        border-top: 2px solid #bcbcbc !important;
+        border-bottom: 2px solid #bcbcbc !important;
+    }
+}
+
+.verificar {
+    background: #0085b0 none repeat scroll 0 0;
+    cursor: pointer;
+    margin: 0.4em;
+    padding: .75em 1em;
+    color: #fff;
+    border-radius: .4em;
+}
+.verificar.hvr-outline-out::before {
+    border: 4px solid #0085b0;
+    border-radius: .4em;
+}
+.qTop {
+    background-image: url('../images/interfax/question.svg');
+    height:93px;
+    padding-top:27px;
+}
+
+.qTop h4, .qTop h5 {
+    margin: 0;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.dk-icon-noitem.dont-works {
+    cursor: default;
+}
+.dk-icon-noitem.dont-works:hover {
+    opacity: 1;
+}
+
+// X-TOOLTIP
+.contentTT {
+    @include bgcolor($color-blue-light);
+    @include txcolor($color-font);
+    @include bdradius;
+    padding: 1.5em 2em .5em;
+    width: 24em;
+    z-index: 20;
+}
+.ui-helper-hidden-accessible {
+    @extend %fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    display: none;
+
+    border: 0;
+    clip: rect(0 0 0 0);
+}
+// END X-TOOLTIP
+
+// M102
+.btn102 {
+    button {
+        @include bgcolor($color-transparent);
+    }
+}
+
+// M103
+.ddActivity {
+    @include bgimgsize(31em, "m1/m103-bg");
+    background-position: -9px -9px;
+    width: 30em;
+    height: 21em;
+    margin: 0 auto;
+    position: relative;
+
+    div {
+        width: 7em;
+        height: 7em;
+        position: absolute;
+        display: block;
+        margin: 0;
+
+        &.isdroppable {
+            border: none;
+        }
+
+        // AFTER
+        img {
+            width: 6.5em;
+        }
+
+        &.x-drophover {
+            
+        }
+
+        &.x-related {
+            outline: none;
+        }
+    }
+
+    .dropA {
+        top: -0.1em;
+        left: 8.35em;
+
+        img {
+            transform: rotate(0deg);
+        }
+    }
+    .dropB {
+        top: 0;
+        left: 16.5em;
+
+        img {
+            transform: rotate(0deg);
+        }
+    }
+    .dropC {
+        top: 6.5em;
+        right: 0;
+        transform: rotate(90deg);
+
+        img {
+            width: 7.4em;
+            transform: rotate(0deg);
+        }
+    }
+    .dropD {
+        bottom: 2.2em;
+        right: 6.72em;
+
+        img {
+            width: 7em;
+        }
+    }
+    .dropE {
+        bottom: 2.1em;
+        left: 7.5em;
+    }
+    .dropF {
+        bottom: 4.45em;
+        left: 1.65em;
+        transform: rotate(90deg);
+
+        img {
+            width: 6.7em;
+        }
+    }
+    .dropG {
+        top: 2.95em;
+        left: 0.9em;
+
+        img {
+            width: 6.2em;
+            transform: rotate(-90deg);
+        }
+    }
+}
+.dragImg {
+    .dragword {
+        @include bgcolor($color-transparent);
+        border: none;
+
+        img {
+            width: 3em;
+        }
+    }
+}
+
+.rot180 {
+    transform: rotate(180deg);
+}
+
+// M106
+.badgeAnimation {
+    img {
+        width: 11em;
+        border: 10px solid fade-out($color-white, 0.5);
+        border-radius: 6em;
+    }
+
+    .shine-me {
+        width: 11em;
+        height: 11em;
+        position: absolute;
+        margin-left: calc(50% - 5.5em);
+        border-radius: 6em;
+
+        -webkit-animation-name: ShineAnimation;
+        -webkit-animation-duration: 5s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: cubic-bezier(.12,.89,.98,.47);
+    }
+}
+
+@-webkit-keyframes ShineAnimation{
+    from {
+        background-repeat:no-repeat;
+        background-image:-webkit-linear-gradient(
+            top left,
+            rgba(255, 255, 255, 0.0) 0%,
+            rgba(255, 255, 255, 0.0) 45%,
+            rgba(255, 255, 255, 0.5) 48%,
+            rgba(255, 255, 255, 0.8) 50%,
+            rgba(255, 255, 255, 0.5) 52%,
+            rgba(255, 255, 255, 0.0) 57%,
+            rgba(255, 255, 255, 0.0) 100%
+        );
+        background-position:-250px -250px;
+        background-size: 600px 600px
+    }
+    to {
+        background-repeat:no-repeat;
+        background-position:250px 250px;
+    }
+}
+
+// DDCONCEPTS
+.ddConcepts {
+    .concepts {
+        div {
+            @include bgcolor($color-orange);
+            @include txcolor($color-white);
+            width: 100%;
+            border: none;
+            margin-bottom: .5em;
+
+            h4 {
+                font-size: 1.2em;
+                margin: .5em;
+            }
+
+            &.indrag {
+                @include bgcolor(fade-out($color-orange, .2));
+            }
+        }
+    }
+
+    .meanings {
+        div {
+            h4 {
+                font-size: 1.4em;
+                margin: 0 0 .1em;
+                color: $color-orange;
+                letter-spacing: 1px;
+                font-weight: 700;
+            }
+            p {
+                margin: 0;
+            }
+
+            &.x-drophover {
+                @include bgcolor(fade-out($color-orange, .9));
+                border: 2px dashed;
+            }
+        }
+    }
+} 
+
+// BOXPANEL
+.boxPanel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 16vh;
+    border: 2px dashed $color-blue-dark;
+
+    color: $color-blue-dark;
+
+    @include bgcolor(fade-out($color-white, .3));
+
+    p {
+        margin: 0 1.5em;
+    }
+}
+
+// STEPTAG
+.stepTag {
+    position: fixed;
+    width: 5em;
+    top: 7em;
+    left: 0;
+    border: 2px solid $color-white;
+    border-left: none;
+
+    background-color: #000;
+    padding: 1em .5em;
+    border-radius: 0 .5em .5em 0;
+
+    h5 {
+        color: $color-white;
+        margin: .25em 0 0;
+    }
+}
+
+// X-CLICK
+.boxMiniCard {
+    margin: 0.5em .75em;
+    cursor: default;
+    padding: 1em 1.5em;
+    border-radius: .5em;
+    box-shadow: 0 2px 5px rgba(0,0,0,.26);
+
+    .fIcon {
+        cursor: pointer;
+        background-color: transparent;
+
+        @include transition($transition-properties...);
+
+        &:hover {
+            @include scalebtn($transform-properties...);
+            z-index: 2;
+        }
+        &:focus {
+            outline:0;
+        }
+    }
+
+    .fVisible {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+
+        padding: 1em 0;
+
+        img {
+            width: 80px;
+            margin-right: 20px;
+        }  
+
+        .text {
+            width: calc(100% - 100px);
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.clickCardBG {
+    margin: 0.5em 0 1em;
+    cursor: default;
+    padding: 1em 1.5em;
+
+    &.a {
+        @include bgimgsize(cover, "m2/m210a");
+    }
+    &.b {
+        @include bgimgsize(cover, "m2/m210b");
+    }
+    &.c {
+        @include bgimgsize(cover, "m2/m210c");
+    }
+
+    background-position: right center !important;
+
+    .fIcon {
+        width: 100%;
+        height: 21vh;
+        cursor: pointer;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: $color-white;
+
+        h1 {
+            margin: 0;
+            font-weight: 700;
+        }
+
+        @include transition($transition-properties...);
+
+        &:hover {
+            @include scalebtn($transform-properties...);
+            z-index: 2;
+        }
+        &:focus {
+            outline:0;
+        }
+    }
+
+    .fVisible {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+
+        padding: 1em 0;
+        color: $color-white;
+        height: 44vh;
+
+        .text {
+            p {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.overlapCol {
+    .col-5{
+        margin: 0 0 0 -6em;
+
+        &.z2 {
+            z-index: 2;
+        }
+        &.z1 {
+            z-index: 1;
+        }
+    }  
+}
+
+.hAuto {
+    height: auto;
+}
+
+// UL
+ul.ulCheck {
+    list-style: none;
+    text-align: left;
+    padding: 0 0 0 1.125em;
+    margin: .5em 0 1em;
+
+    li {
+        display: flex;
+        margin-left: 0.275em;
+        padding-left: 1.3em;
+
+        &::before {
+            font-family: 'Font Awesome 5 Free';
+            content: "\f058";
+            font-size: 1.2em;
+            color: $color-green;
+            display: inline-flex;
+            align-items: center;
+            margin-left: -1.5em; /* same as padding-left set on li */
+            width: 1.5em;
+        }
+
+        h4 {
+            display: inline-flex;
+            margin: .25em 0;
+        } 
+    }
+}

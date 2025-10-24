@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 170 190" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:10;">
+    <g>
+        <path d="M11,36L85,7L160,36" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+        <rect x="10" y="35" width="150" height="150" style="fill:rgb(60,109,164);stroke:white;stroke-width:6px;stroke-linecap:butt;"/>
+        <circle cx="86" cy="8" r="3" style="fill:rgb(35,31,32);"/>
+        <rect x="10" y="35" width="150" height="150" style="fill:white;fill-opacity:0.5;"/>
+        <g>
+            <path d="M144.3,184L119.2,184L15,38L40.1,38L144.3,184Z" style="fill:white;fill-opacity:0.3;fill-rule:nonzero;"/>
+            <path d="M158,176.3L158,184L155.4,184L51.2,38L59.3,38L158,176.3Z" style="fill:white;fill-opacity:0.3;fill-rule:nonzero;"/>
+            <path d="M158,163.1L158,168.8L64.7,38L68.7,38L158,163.1Z" style="fill:white;fill-opacity:0.3;fill-rule:nonzero;"/>
+        </g>
+        <path d="M140.1,122.8C139.3,100.9 125.1,81.7 104.5,74.5C104.1,71.6 101.6,69.5 98.7,69.5L74.9,69.5C72,69.5 69.5,71.6 69.1,74.5C48.4,81.7 34.3,100.9 33.5,122.8L33.4,122.8C30.1,122.8 27.5,125.5 27.5,128.7L27.5,132.6C27.5,135.9 30.2,138.5 33.4,138.5L140,138.5C143.3,138.5 145.9,135.8 145.9,132.6L145.9,128.7C146,125.4 143.3,122.8 140.1,122.8ZM69,78.7L69,112.9C69,114 69.9,114.9 71,114.9C72.1,114.9 73,114 73,112.9L73,75.4C73,74.3 73.9,73.4 75,73.4L84.9,73.4L84.9,116.8C84.9,117.9 85.8,118.8 86.9,118.8C88,118.8 88.9,117.9 88.9,116.8L88.9,73.4L98.8,73.4C99.9,73.4 100.8,74.3 100.8,75.4L100.8,112.9C100.8,114 101.7,114.9 102.8,114.9C103.9,114.9 104.8,114 104.8,112.9L104.8,78.7C123.2,85.7 135.6,103.1 136.3,122.8L37.5,122.8C38.2,103.1 50.6,85.8 69,78.7ZM142.1,132.6C142.1,133.7 141.2,134.6 140.1,134.6L33.4,134.6C32.3,134.6 31.4,133.7 31.4,132.6L31.4,128.7C31.4,127.6 32.3,126.7 33.4,126.7L140,126.7C141.1,126.7 142,127.6 142,128.7L142,132.6L142.1,132.6Z" style="fill:white;fill-rule:nonzero;"/>
+    </g>
+</svg>

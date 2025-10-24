@@ -1,0 +1,87 @@
+<div class="row middle-xs center-xs bg210">
+    <div class="stepTag bgStep06 animated fadeInLeft delay1">
+        <img src="images/m2/m210-tg.svg">
+        <h5>Etapa 6</h5>
+    </div>
+
+    <div class="col-9 animated fadeIn delay2">
+        <div class="row middle-xs center-xs mb1">
+            <div class="col boxTxt hAuto">
+                <p>Esta etapa se realiza en 4 fases. <i>Haz clic sobre cada una y conoce en qué consiste y sus responsables.</i></p>
+            </div>
+
+            <div class="w100 animated fadeIn delay4">
+                <div class="x-svg"></div>
+            </div>
+
+            <!--Feedback /-->
+            <div id="x-feed_panel" class="x-feed_panel boxPanel animated fadeIn delay5 bgWhite80 w100"></div>
+        </div>
+
+    <!-- FinalFeedback -->
+        <div id="final_feed" class="toukai w80 mgCenter">
+            <div class="feedMessage">
+                <div class="text">
+                    <p><span class="x-username"></span>, recuerda que el monitoreo y revisión es fundamental para la implementación de los controles. <i>Avanza a la <b>etapa 7</b> para conocer la importancia de la comunicación en este modelo.</i></p>
+                </div>
+
+                <div class="sugi animated wobble delay2">
+                    <button class="x-jump btnContinue" data-jump="m2_11" autofocus><i class="icon-i-continue"></i></button>
+                </div>
+            </div>
+        </div>
+    <!--//-->
+</div>
+</div>
+<!-- FEEDBACK -->
+<!-- FEED01 -->
+<div id="feed_A" class="toukai">
+    <p>En primera instancia es responsabilidad de los líderes y ejecutores de los procesos, garantizar que se identifican, evalúan, controlan y mitigan sus riesgos, así como reportar el avance en la implementación de controles.</p>
+</div>
+<!-- // -->
+
+<!-- FEED02 -->
+<div id="feed_B" class="toukai">
+    <p>Las áreas encargadas de la Gestión de Riesgos en GEB y Filiales trimestralmente realizan el seguimiento y actualización de las matrices de riesgos estratégicos las cuales son presentadas ante el comité de auditoría y riesgos, quien a su vez evalúa la gestión y da recomendaciones para la mejora continua.</p>
+</div>
+<!-- // -->
+
+<!-- FEED03 -->
+<div id="feed_C" class="toukai">
+    <p>El seguimiento a la gestión de riesgos de procesos se realiza semestralmente, y en proyectos el seguimiento es mensual en Comité de Proyectos.</p>
+</div>
+<!-- // -->
+
+<!-- FEED04 -->
+<div id="feed_D" class="toukai">
+    <p>Auditoría Interna realiza seguimiento mediante la ejecución del Plan Anual de Auditoría basada en Riesgos.</p>
+</div>
+<!-- // -->
+
+<!-- CODE -->
+<script>
+    $(function() {
+        $('.x-svg').load('images/m2/m210.svg', function(data){
+            $('.x-area').click(function(){
+                var content = $(this).data('content');
+                var $panel = $('.x-feed_panel');
+
+                $(this).attr("class", "x-area viewed");
+                $(this).css('fill-opacity', '.3');
+                main.stopMedia();
+                main.audioPlay("#button_sound");
+
+                $panel.html($('#' + content).html());
+                $panel.fadeIn(function () {
+                    if ($('.x-area').length == $('.viewed').length) {
+                        var t = setTimeout(function () {
+                            $('#final_feed').show();
+                        }, 3 * 1000);
+                        timers.push(t);
+                    }
+                });
+            });
+        });
+
+    });
+</script>

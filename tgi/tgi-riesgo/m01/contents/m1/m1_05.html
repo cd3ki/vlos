@@ -1,0 +1,120 @@
+<div class="row middle-xs center-xs bgGreenAqua x-question bg105">
+
+    <!-- FEEDBACK -->
+    <div class="row middle-xs center-xs intro animated fadeIn delay1">
+        <div class="col-5">
+            <!-- // -->
+            <div class="bgBlue card txWhite txCenter animated fadeIn delay1" style="border-radius: .75em;">
+                <div class="row center-xs start-xs h100 bgLogo pRelative">
+                    <div class="col-10 center-xs">
+                        <div class="mt3 mb3">
+                            <p><span class="x-username"></span>, <b>lee con atención</b> cada una de las preguntas y selecciona <b>la respuesta correcta</b>.</p>
+                            <h4><b>¡Buena suerte!</b></h4>
+                        </div>
+                    </div>
+
+                    <button class="buttonTut nextModule" onclick="$('.intro').hide(); $('.namba').hide(); $('.n01').addClass('disFlex');" autofocus><i class="icon-i-continue fa-2x"></i></button>
+                </div>
+            </div>
+            <!-- // -->
+        </div>
+    </div>
+    <!-- // -->
+    
+    <!-- QUESTION 01 -->
+    <div class="row middle-xs center-xs toukai namba n01 n0 mt5">
+        <div class="row middle-xs center-xs bgWhite70">
+            <div class="col-10 wwMillionare">
+                <div class="statementQ">
+                    <h4>¿Por qué es importante gestionar los riesgos en GEB?</h4>
+                </div>
+
+                <div class="row start-xs center-xs mb1">
+                    <div class="col-5_half mgCenter">
+                        <div class="answnamba opA x-answer" data-correct="n">
+                            <p>Para proteger y crear valor en los proyectos de inversión.</p>
+                        </div>
+                    </div>
+                    <div class="col-5_half mgCenter">
+                        <div class="answnamba opB x-answer" data-correct="n">
+                            <p>Para establecer las acciones y compromisos de la VP. Financiera.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row start-xs center-xs">
+                    <div class="col-5_half mgCenter">
+                        <div class="answnamba opC x-answer" data-correct="y">
+                            <p>Porque permite identificar a tiempo desviaciones en la consecución de los objetivos estratégicos, de proyecto o proceso, asegurando la toma de decisiones asertivamente.</p>
+                        </div>
+                    </div>
+                    <div class="col-5_half mgCenter">
+                        <div class="answnamba opD x-answer" data-correct="n">
+                            <p>Para vigilar que solo algunas áreas de la organización cumplan los lineamientos de seguridad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // -->
+
+    <!--Feedback /-->
+    <div id="x-feedback_panel" class="x-feedback_panel"></div>
+
+    <!--./GOOD-->
+    <div class="x-feedback_good toukai">
+        <div class="vBeam row middle-xs center-xs h100 color animated fadeIn">
+            <div class="col-4">
+                <!-- // -->
+                <div class="feedBox good animated fadeIn delay1">
+                    <div class="row center-xs middle-xs">
+                        <div class="col-10 center-xs mb1">
+
+                            <img src="images/interfax/f-good.svg" alt="" class="w60 mt2">
+
+                            <h4><b>¡Muy bien, <span class="x-username"></span>!</b></h4>
+
+                            <p>Gestionar los riesgos nos ayuda a fortalecer una política enfocada en valorar los procesos e incorporar el riesgo como elemento de la operación del negocio.</p>
+
+                            <button class="x-jump buttonTut nextModule" data-jump="m1_05b" autofocus>
+                                <i class="fas icon-i-continue fa-2x"></i>
+                            </button>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- // -->
+            </div>
+        </div>
+    </div>
+    <!-- // -->
+
+    <!-- ./WRONG -->
+    <div class="x-feedback_wrong toukai">
+        <div class="vBeam color animated fadeIn">
+            <div class="row middle-xs center-xs h100">
+                <div class="col-4">
+                    <!-- // -->
+                    <div class="feedBox bad txWhite txCenter animated fadeIn">
+                        <div class="txFeed">
+                            <img src="images/interfax/f-wrong.svg" width="">
+                            <br>
+                            <h4><b>¡Te has equivocado!</b></h4>
+
+                            <p>Inténtalo de nuevo.</p>
+
+                            <button class="verify x-try_again">
+                                <i class="fas fa-redo fa-2x"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                    <!-- // -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // -->
+</div>
