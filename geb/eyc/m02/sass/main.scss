@@ -1,0 +1,948 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/placeholders";
+
+button {
+    font-family: 'Open Sans Condensed', sans-serif;
+    border: none;
+    cursor: pointer;
+
+    @include transition($transition-properties...);
+
+    &:hover {
+        @include scalebtn($transform-properties...);
+        z-index: 2;
+    }
+    &:focus {
+        outline:0;
+    }
+}
+
+/* ESPECIALS */
+.toukai {
+    display: none;
+}
+.disFlex {
+    display: flex;
+}
+
+// BGFX
+.bgKen {
+    @extend %absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.xVideo {
+  position: absolute;
+  min-width: 100%; 
+  min-height: 100%;
+  z-index: -1;
+}
+
+.svg95 {
+    svg {
+        width: 95% !important;
+    }
+}
+
+// BGIMAGES
+.bg201 {
+    @include bgimgpng(cover, "m2/m201-bg");
+}
+.bg201a {
+    @include bgimgsize(contain, "m2/m201-phone");
+}
+.bg202 {
+    @include bgimgpng(cover, "m2/m202-bg");
+}
+.bg203 {
+    @include bgimgpng(cover, "m2/m203-bg");
+}
+.bg204 {
+    @include bgimgpng(cover, "m2/m204-bg");
+}
+.bg205 {
+    @include bgimgpng(cover, "m2/m205-bg");
+}
+.bg206 {
+    @include bgimgpng(cover, "m2/m206-bg");
+}
+.bg210 {
+    @include bgimgpng(cover, "m2/m210-bg");
+}
+.bg214 {
+    @include bgimgpng(cover, "m2/m214-bg");
+}
+.bg218 {
+    @include bgimgpng(cover, "m2/m218-bg");
+}
+.bg222 {
+    @include bgimgpng(cover, "m2/m222-bg");
+}
+.bg226 {
+    @include bgimgpng(cover, "m2/m226-bg");
+}
+.bg230 {
+    @include bgimgpng(cover, "m2/m230-bg");
+}
+.bg231 {
+    @include bgimgpng(cover, "m2/m231-bg");
+}
+.bg232 {
+    @include bgimgpng(cover, "m2/m232-bg");
+}
+.bg233 {
+    @include bgimgpng(cover, "m2/m233-bg");
+}
+.bg234 {
+    @include bgimgpng(cover, "m2/m234-bg");
+}
+.bg235 {
+    @include bgimgpng(cover, "m2/m235-bg");
+}
+.bg236 {
+    @include bgimgpng(cover, "m2/m236-bg");
+}
+
+.boxHolo {
+    @extend %relative;
+    padding: 1em;
+    border: 0px solid $color-white;
+    border-radius: .6em;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 5px 1px fade-out($color-white, .5), 0 0 5px 1px fade-out($color-white, .5) inset;
+
+    text-align: center;
+
+    .txFeed {
+        @include bgcolor(fade-out($color-white, .1));
+        margin: 0;
+        padding: .5em 1em;
+        border-radius: .6em;
+        box-shadow: 0 0 5px 1px $color-white, 0 0 5px 1px $color-white inset;
+    }
+
+    .tail {
+        @extend %absolute;
+        bottom: -36px;
+        left: calc(50% - 25px);
+        width: 50px;
+        height: 50px;
+        @include bgimgsize(cover, "props/tail");
+        opacity: .85;
+
+        -moz-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+
+        
+        &.L {
+            -moz-transform: rotate(90deg) scaleX(-1);
+            -webkit-transform: rotate(90deg) scaleX(-1);
+            transform: rotate(90deg) scaleX(-1);
+            bottom: 3em;
+            left: -30px;
+        }
+        &.R {
+            -moz-transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+            bottom: 3em;
+            left: inherit;
+            right: -30px;
+        }
+
+        &.T {
+            -moz-transform: rotate(-180deg);
+            -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+            bottom: inherit;
+            top: -45px;
+        }
+    }
+}
+
+// M203
+.svg203 {
+    svg {
+        width: 100;
+        margin-top: -3.5em;
+    }
+}
+
+.dtod203 {
+    width: 100%;
+    justify-content: center;
+
+     .z-drop {
+        @extend %relative;
+
+        .isdroppable {
+            @extend %absolute;
+            width: 62%;
+            height: 10.5em;
+            top: 1em;
+            left: 1em;
+            border: 4px dashed #fff;
+
+            &.x-drophover {
+                @include bgcolor(fade-out($color-black, .7));    
+            }
+
+            .card {
+                opacity: 0;
+            }
+        }
+    }
+
+    .dragCard {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        .card {
+            cursor: move;
+        }
+    }
+
+    .goBTN {
+        right: -0.45em;
+    }
+}
+.cardValue {
+    width: 70%;
+    margin: 0 auto;
+    padding: 2em 1em 1em;
+    border-radius: 2em;
+    box-shadow: 0px 0px 1em #00ffff;
+}
+
+// M204
+.m204-compu {
+    #btn01,
+    #btn02,
+    #btn03 {
+        cursor: pointer;
+        // opacity: .5;
+        // animation: twinkle 3s ease infinite;
+        // opacity: 1;
+    }
+
+    #cable01,
+    #cable02,
+    #cable03 {
+        display: none;
+    }
+}
+
+// M205
+.m205-sospechosos,
+.m209-sospechosos,
+.m213-sospechosos,
+.m217-sospechosos,
+.m221-sospechosos,
+.m225-sospechosos {
+    #btn-eduardo,
+    #btn-ester,
+    #btn-karen,
+    #btn-michael,
+    #btn-gustavo,
+    #btn-daniela {
+        cursor: pointer;
+    }
+}
+
+// BOXCOMIC
+.boxComic {
+    height: 26em;
+    margin: .5em;
+
+    @include bgcolor(fade-out($color-gray, 0.7));
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    align-items: flex-end;
+
+    &.sizeM {
+        height: 20em;
+    }
+
+    &.big {
+        width: 94%;
+        margin: 0 auto;
+        height: 80vh;
+        margin: 0;
+
+        .text {
+            padding: .5em .75em;
+        }
+    }
+
+    .text {
+        width: 100% !important;
+        padding: .5em .75em;
+        @include bgcolor($color-white);
+
+        p {
+            margin: 0;
+            font-size: .98em;
+            line-height: 1.15em;
+        }
+    }
+    
+    // M207
+    &.im207a {
+        @include bgimgsize(cover, "m2/m207a");
+    }
+    &.im207b {
+        @include bgimgsize(cover, "m2/m207b");
+    }
+    &.im207c {
+        @include bgimgsize(cover, "m2/m207c");
+    }
+
+    // M211
+    &.im211a {
+        @include bgimgsize(cover, "m2/m211a");
+    }
+    &.im211b {
+        @include bgimgsize(cover, "m2/m211b");
+    }
+    &.im211c {
+        @include bgimgsize(cover, "m2/m211c");
+    }
+
+    // M215
+    &.im215a {
+        @include bgimgsize(cover, "m2/m215a");
+    }
+    &.im215b {
+        @include bgimgsize(cover, "m2/m215b");
+    }
+    &.im215c {
+        @include bgimgsize(cover, "m2/m215c");
+    }
+
+    // M219
+    &.im219a {
+        @include bgimgsize(cover, "m2/m219a");
+    }
+    &.im219b {
+        @include bgimgsize(cover, "m2/m219b");
+    }
+    &.im219c {
+        @include bgimgsize(cover, "m2/m219c");
+    }
+
+    // M222
+    &.im223a {
+        @include bgimgsize(cover, "m2/m223a");
+    }
+    &.im223b {
+        @include bgimgsize(cover, "m2/m223b");
+    }
+    &.im223c {
+        @include bgimgsize(cover, "m2/m223c");
+    }
+
+    // M227
+    &.im227a {
+        @include bgimgsize(cover, "m2/m227a");
+    }
+    &.im227b {
+        @include bgimgsize(cover, "m2/m227b");
+    }
+    &.im227c {
+        @include bgimgsize(cover, "m2/m227c");
+    }
+}
+
+// QUESTION
+.pageQuestion {
+    border-radius: 0 0.75em 0 0.75em;
+    @include bgcolor(fade-out($color-white, .2));
+    transform: skew(-4deg);
+    @include boxshadow;
+    padding: 2em 2.5em 1.5em;
+
+    .shitsumon {
+        @include bgcolor($color-catalina-blue);
+        @include txcolor($color-white);
+        text-align: center;
+        margin: -2em -2.5em 1.5em;
+        padding: 3em 2.5em 1.5em;
+
+        h4 {
+            margin-bottom: .25em;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+        &.im002{
+            @include bgimgsize(10em, "m0/m002");
+        }
+        
+
+        &.im002 {
+            background-position: left top;
+        }
+    }
+
+    
+}
+
+ul.kotae {
+    li.answnamba {
+        @include bgimgsize(30px, "interfax/qkNone");
+        background-position: 0.2em 0.6em;
+        border-bottom: 2px solid $color-astronaut-blue;
+        padding: .75em .75em .75em 2.25em;
+        cursor: pointer;
+    
+        &:last-child { 
+            border: none;
+        }
+
+        &.qselected {
+            @include bgcolor(fade-out($color-jagged-ice, .6));
+            @include bgimg("interfax/qkSelected");
+        }
+    }
+}
+
+.m230-objetos {
+    #btn-camera,
+    #btn-recorder,
+    #btn-sim {
+        display: none;
+        cursor: pointer;
+    }
+
+    .viewed {
+        animation: none !important;
+        opacity: 0 !important;
+    }
+}
+
+// M232
+.ddPuzzle {
+    @extend %relative;
+    @include bgimgsize(20em, "m2/m232-drop");
+    width: 20em;
+    height: 23.2em;
+    margin: 1em auto 0;
+    transform: rotate(-3deg);
+    box-shadow: 0 0 7px rgba(0,0,0,.2);
+
+    div {
+        width: 7em;
+        height: 7em;
+        // background-color: rgba(0,0,0,.5);
+        position: absolute;
+        display: block;
+        margin: 0;
+
+        &.isdroppable {
+            border: none;
+        }
+
+        // AFTER
+        img {
+            width: 100%;
+        }
+
+        &.x-drophover {}
+        &.x-related {
+            outline: none;
+        }
+    }
+
+    .dropA {
+        width: 11.9em;
+        height: 13em;
+        top: -4px;
+        left: -2px;
+    }
+    .dropB {
+        width: 11.9em;
+        height: 13em;
+        top: -8px;
+        right: -10px;
+    }
+    .dropC {
+        width: 11.9em;
+        height: 13em;
+        bottom: -3px;
+        left: -6px;
+    }
+    .dropD {
+        width: 14em;
+        height: 13em;
+        bottom: -1px;
+        right: -5px;
+    }
+}
+.dragPiece {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    cursor: move;
+
+    &.dTicket {
+        display: inline-flex;
+    }
+
+    .piece {
+        @include bgcolor($color-transparent);
+        border: none;
+        margin: 0 .5em;
+        transform: rotate(240deg);
+
+        &.rt20 {
+            transform: rotate(20deg);
+        }
+
+        &.rt140 {
+            transform: rotate(140deg);
+        }
+
+        img {
+            width: 7em;
+        }
+    }
+}
+
+// M232
+.ddTicket {
+    @extend %relative;
+    @include bgimgsize(34em, "m2/m234-drop");
+    width: 33em;
+    height: 14em;
+    margin: 1em auto 0;
+    transform: rotate(-3deg);
+    box-shadow: 0 0 7px rgba(0,0,0,.2);
+
+    div {
+        width: 7em;
+        height: 7em;
+        // background-color: rgba(0,0,0,.5);
+        position: absolute;
+        display: block;
+        margin: 0;
+
+        &.isdroppable {
+            border: none;
+        }
+
+        // AFTER
+        img {
+            width: 100%;
+        }
+
+        &.x-drophover {}
+        &.x-related {
+            outline: none;
+        }
+    }
+
+    .dropA {
+        width: 12.35em;
+        height: 14em;
+        top: -5px;
+        left: -9px;
+    }
+    .dropB {
+        width: 12.3em;
+        height: 14em;
+        top: -4px;
+        right: -9px;
+    }
+}
+
+/* FeedMessage */
+.feedMessage {
+    // width: 100%;
+    margin: 1.25em -2.75em 0;
+
+    @extend %relative;
+
+    @include bgcolor($color-blue);
+    @include bdradius;
+
+    border: 3px solid $color-blue;
+
+    @include txcolor($color-white);
+
+    .important, .tip {
+        @extend %absolute;
+
+        top: -2px;
+        left: -3.5em;
+        width: 3.25em;
+        height: 3.25em;
+        border-radius: .5em;
+
+        @include bgimgsize(100%, "none");
+        border: 2px solid $color-blue;
+        @include bgcolor($color-blue);
+    }
+
+    .important {
+        @include bgimg("interfax/important");
+    }
+
+    .tip {
+        @include bgimg("interfax/tip");
+    }
+
+    .text {
+        margin: .125em 2em .125em 1.5em;
+    }
+}
+
+.videoFull {
+    @extend %relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    video {
+        @extend %absolute;
+        // width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+
+/* EVA */
+h3.actTitle {
+    margin: -.5em -2.75em 1em;
+    padding: 1em 3em .75em;
+    border-bottom: 4px solid #f4f9ff;
+    background-color: #0085b0;
+    color: #1d8cc2;
+    font-size: 1.5em;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+
+.qChoice {
+    .ansNamba {
+        background: url('../images/interfax/aNone.svg') no-repeat scroll 0.25em center / 30px 30px transparent;
+        border-bottom: 2px solid #efefef;
+        cursor: pointer;
+        padding: 10px 15px 10px 45px;
+    }
+
+    div:nth-child(2) { 
+        border-top: 2px solid #0085b0;
+    }
+
+    div.q-selected {
+        background: url('../images/interfax/aSelected.svg') no-repeat scroll 0.25em center/30px 30px transparent !important;
+        border: 2px solid #0085b0 !important;
+        border-radius: 6px !important;
+    }
+    
+    .multiple {
+        border-top: 2px solid #bcbcbc !important;
+        border-bottom: 2px solid #bcbcbc !important;
+    }
+}
+
+.verificar {
+    background: #0085b0 none repeat scroll 0 0;
+    cursor: pointer;
+    margin: 0.4em;
+    padding: .75em 1em;
+    color: #fff;
+    border-radius: .4em;
+}
+.verificar.hvr-outline-out::before {
+    border: 4px solid #0085b0;
+    border-radius: .4em;
+}
+.qTop {
+    background-image: url('../images/interfax/question.svg');
+    height:93px;
+    padding-top:27px;
+}
+
+.qTop h4, .qTop h5 {
+    margin: 0;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.dk-icon-noitem.dont-works {
+    cursor: default;
+}
+.dk-icon-noitem.dont-works:hover {
+    opacity: 1;
+}
+
+// X-TOOLTIP
+.ui-widget,
+.ui-widget-content,
+.ui-tooltip,
+.ui-corner-all {
+    background-color: transparent !important;
+    border: none !important;
+}
+.contentTT {
+    @include bgcolor($color-jagged-ice);
+    @include txcolor($color-astronaut-blue);
+    @include bdradius;
+    padding: 1.5em 2em 1.5em;
+    width: 24em;
+    z-index: 20;
+
+    p {
+        margin: 0;
+    }
+}
+.ui-helper-hidden-accessible {
+    @extend %fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    display: none;
+
+    border: 0;
+    clip: rect(0 0 0 0);
+}
+// END X-TOOLTIP
+
+// CRUCI
+.fila-flex{
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    -moz-flex-direction: row;
+    flex-direction: row;
+}
+
+.columna-flex{
+    -ms-box-orient: vertical;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+}
+
+.centrar-horizontal{
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    -ms-flex-pack: center;
+    -moz-justify-content: center;
+    justify-content: center;
+}
+
+.drag {
+    @include bgcolor($color-transparent);
+    margin: .5em .4em;
+    padding: .5em .5em 0.3em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+    cursor: move;
+
+    border: 1px solid green;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    -webkit-transform: skewX(-10deg);
+    transform: skewX(-10deg);
+    border-radius: 20px 5px 20px 0px;
+    text-shadow: 0 0 20px #fff;
+    letter-spacing: 2px;
+
+    border-color: #0ff;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(48, 138, 255, 0.5)), to(rgba(29, 96, 240, 0.5)));
+    background-image: linear-gradient(to bottom, rgba(48, 138, 255, 0.5), rgba(29, 96, 240, 0.5));
+    box-shadow: 0 0 70px rgba(48, 138, 255, 0.5), 0 5px 20px rgba(48, 138, 255, 0.5), inset 0 1px #ffeca8, inset 0 -1px #ffeca8;
+    color: #0ff;
+}
+
+.dropp {
+    border: 2px solid #ffffff !important;
+    box-shadow: 0 0 7px rgba(255,255,255,.5);
+}
+
+.drop span {
+    width: 35px;
+    height: 35px;
+    font-size: 1.25em;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+    border: .5px solid #00ffff;
+    color: #00ffff;
+
+    border-color: #0ff;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(48, 138, 255, 0.5)), to(rgba(29, 96, 240, 0.5)));
+    background-image: linear-gradient(to bottom, rgba(48, 138, 255, 0.5), rgba(29, 96, 240, 0.5));
+    box-shadow: 0 0 70px rgba(48, 138, 255, 0.5), 0 5px 20px rgba(48, 138, 255, 0.5), inset 0 1px #ffeca8, inset 0 -1px #ffeca8;
+    color: #0ff;
+}
+
+.cajadrop {
+    position: absolute;
+    text-align: center;
+}
+
+button.numero {
+    cursor: pointer;
+
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+
+    color: $color-white;
+    font-weight: bold;
+    text-align: center;
+    
+    background-color: #f8963e;
+    border-radius: 2.4em;
+    border: 2px solid #f8963e;
+
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+button.numero.h {
+    margin: 2px 2px;
+}
+
+button.numero.v {
+    margin: 0 0 4px 4px;
+}
+
+button.numero p {
+    margin: 0;
+}
+
+button.numero:hover {
+    transform: scale(1.05);
+}
+
+.clueS {
+    padding: 1em;
+    @include bgcolor(fade-out($color-white, .15));
+    border-radius: 0 0.75em 0 0.75em;
+    box-shadow: 0 0 10px rgba(48, 138, 255, 0.5), 0 5px 10px rgba(48, 138, 255, 0.5), inset 0 1px #ffeca8, inset 0 -1px #ffeca8;
+    backdrop-filter: blur(7px);
+
+    h4 {
+        @include bgcolor(#f8963e);
+        @include txcolor($color-white);
+        margin: -1em -1em 0;
+        padding: .5em 1.5em .25em;
+        letter-spacing: 2px;
+    }
+
+    .ws-words {
+        margin: 0 !important;
+
+        li {
+            border-bottom: 2px solid rgba(48, 138, 255, 0.5);
+            list-style: none;
+            padding: 0.5em 0.75em;
+        
+            &.acerto {
+                @include bgcolor(fade-out($color-black, 0.9));
+                @include bgimgsize(30px, "interfax/check");
+                background-position: 98% 90%;
+            }
+        }
+    }
+}
+
+.boxDragWords {
+    margin-top: 1em;
+    min-height: 3.5em;
+}
+.bgBlur {
+    @include bgcolor(fade-out($color-black, .8));
+    backdrop-filter: blur(4px);
+}
+.boxCruci {
+    // @include bgcolor(fade-out($color-white, .2));
+    @extend %relative;
+    padding: 0 0 1em; 
+    width: 512px;
+    margin: 0 auto;
+}
+.cajadrop .drop{
+    border: 2px solid $color-white;
+    text-align: center;
+}
+.cajadrop1 {
+    left: 0;
+    top: 184px;
+    width: 512px;
+}
+.cajadrop1 .drop {
+    height: 36px;
+    width: 468px;
+}
+
+.cajadrop2 {
+    left: 400px;
+    top: 0px;
+}    
+.cajadrop2 .drop {
+    height: 432px;
+    width: 36px;
+}
+
+.cajadrop3 {
+    left: 256px;
+    top: 108px;
+}    
+.cajadrop3 .drop {
+    height: 216px;
+    width: 36px;
+}
+
+.cajadrop4 {
+    left: 72px;
+    top: 40px;
+    width: 262px;
+}
+.cajadrop4 .drop {
+    height: 36px;
+    width: 216px;
+}
+
+.cajadrop5 {
+    left: 112px;
+    top: 0;
+}    
+.cajadrop5 .drop {
+    height: 432px;
+    width: 36px;
+}

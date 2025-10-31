@@ -1,0 +1,198 @@
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+/*---THEMES---*/
+.bgSilver {
+    @include bgcolor($color-blue);
+}
+
+// Backgrounds
+.bgNothing {
+    @include bgcolor($color-black50);
+
+    color: #fff;
+}
+
+.bgvideo {
+    @include bgimgsize(100px, "interfax/video-camera");
+    @include bgcolor(fade-out($color-black, 0.5) !important);
+}
+
+// bgColors
+.bgWhite {
+    @include bgcolor($color-white !important);
+}
+.bgBlack {
+    @include bgcolor(fade-out($color-black, 0.2) !important);
+}
+
+.bgWhite80 {
+    @include bgcolor(fade-out($color-white, 0.2) !important);
+}
+.bgWhite70 {
+    @include bgcolor(fade-out($color-white, 0.3) !important);
+}
+.bgWhite50 {
+    @include bgcolor(fade-out($color-white, 0.5) !important);
+}
+.bgWhite30 {
+    @include bgcolor(fade-out($color-white, 0.7) !important);
+}
+.bgWhite10 {
+    @include bgcolor(fade-out($color-white, 0.9) !important);
+}
+
+.bgCatalinaBlue {
+    @include bgcolor($color-catalina-blue !important);
+}
+
+.bgVT{
+    @include bgcolor(#06a34b !important);
+}
+.bgVR{
+    @include bgcolor(#9abf36 !important);
+}
+.bgVI{
+    @include bgcolor(#2576bc !important);
+}
+.bgVE{
+    @include bgcolor(#2face3 !important);
+}
+
+.bgGreenYellow {
+    @include bgcolor(fade-out($color-green-feed, 0.8) !important);
+}
+.bgLemon {
+    @include bgcolor($color-lemon !important);
+}
+.bgGreenLight {
+    @include bgcolor($color-green-light !important);
+}
+
+.bgFlushOrange {
+    @include bgcolor($color-flush-orange !important);
+}
+
+.bgBlue {
+    @include bgcolor($color-blue !important);
+}
+.bgAstronaut {
+    @include bgcolor($color-astronaut-blue !important);
+}
+.bgScooter {
+    @include bgcolor($color-scooter-blue !important);
+}
+
+.bgAqua {
+    @include bgcolor($color-aqua !important);
+}
+
+.bgGreen {
+    @include bgcolor($color-green !important);
+}
+
+.bgPurple {
+    @include bgcolor($color-purple !important);
+}
+
+.bgPurpleLight {
+    @include bgcolor($color-purple-light !important);
+}
+
+.bgSilver {
+    @include bgcolor($color-silver !important);
+}
+
+.bgMint {
+    @include bgcolor($color-mint !important);
+}
+
+.bgMintDark {
+    @include bgcolor($color-mint-dark !important);
+}
+
+.bgYellow {
+    @include bgcolor($color-yellow !important);
+}
+
+.bgYellowDark {
+    @include bgcolor($color-yellow-dark !important);
+}
+
+.bgRed {
+    @include bgcolor($color-red !important);
+}
+
+.bgGray {
+    @include bgcolor($color-gray !important);
+}
+.bgGrayLight {
+    @include bgcolor($color-gray-light !important);
+}
+.bgGrayDark {
+    @include bgcolor($color-gray-dark !important);
+}
+
+// Text colors
+.txNormal {
+    color: $color-font;
+}
+
+.txWhite {
+    color: $color-white;
+}
+
+.txCatalinaBlue {
+   color: $color-catalina-blue;
+}
+.txOrange {
+    color: #f8963e;
+}
+
+.txAstronaut {
+    color: $color-astronaut-blue;
+}
+
+.txBlue {
+    color: $color-blue;
+}
+
+.txAqua {
+    color: $color-aqua;
+}
+
+.txGreen {
+    color: $color-green;
+}
+
+.txPurple{
+    color: $color-purple;
+}
+
+.txMint {
+    color: $color-mint;
+}
+
+.txMintDark {
+    color: $color-mint-dark;
+}
+
+// ELEMENTS
+.bgTierra {
+    @include bgcolor($color-tierra !important);
+}
+.bgAgua {
+    @include bgcolor($color-agua !important);
+}
+.bgViento {
+    @include bgcolor($color-viento !important);
+}
+.bgRayo {
+    @include bgcolor($color-rayo !important);
+}
+.bgMontana {
+    @include bgcolor($color-montana !important);
+}
+.bgQuimico {
+    @include bgcolor($color-quimico !important);
+}

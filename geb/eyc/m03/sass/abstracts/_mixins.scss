@@ -1,0 +1,67 @@
+@mixin bgcolor($bgcolor) {
+    background-color: $bgcolor;
+}
+
+@mixin txcolor($txcolor) {
+    color: $txcolor;
+}
+
+@mixin bgimgsize($imgsize, $imgurl) {
+    background-size: $imgsize;
+    background-image: url("../images/#{$imgurl}.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+@mixin bgimgpng($imgsize, $imgurl) {
+    background-size: $imgsize;
+    background-image: url("../images/#{$imgurl}.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+@mixin bgimgjpg($imgsize, $imgurl) {
+    background-size: $imgsize;
+    background-image: url("../images/#{$imgurl}.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+@mixin bgimg($imgurl) {
+    background-image: url("../images/#{$imgurl}.svg");
+}
+
+@mixin bggradient($color01, $color02) {
+    background: linear-gradient(0deg, $color01, $color02);
+    background: -webkit-linear-gradient(0deg, $color01, $color02);
+    background: -moz-linear-gradient(0deg, $color01, $color02);
+}
+
+@mixin transition($property, $duration, $timing, $delay: 0s) {
+	transition: $property $duration $timing $delay;
+	-webkit-transition: $property $duration $timing $delay;
+	-moz-transition: $property $duration $timing $delay;
+	-ms-transition: $property $duration $timing $delay;
+	-o-transition: $property $duration $timing $delay;
+}
+
+@mixin scalebtn ($property){
+    transform: $property;
+    -webkit-transform: $property;
+    -moz-transform: $property;
+    -ms-transform: $property;
+    -o-transform: $property;
+}
+
+@mixin interfax {
+	@extend %fixed;
+    @extend %z-interfax;
+}
+
+@mixin boxshadow {
+    box-shadow: 0 0 7px fade-out($color-black, 0.6);
+}
+
+@mixin bdradius {
+    border-radius: 0.75em;
+}

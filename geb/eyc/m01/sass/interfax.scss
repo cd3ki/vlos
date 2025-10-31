@@ -1,0 +1,152 @@
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'abstracts/placeholders';
+
+body {
+    background-color: #00156A;
+}
+
+.container {
+    > div {
+        @include bgcolor($color-black);
+    }
+    #x-content {
+        @include bgcolor($color-transparent);
+    }
+
+    // TITLE + BREAD
+    .dk-breadcrumb {
+        @include interfax;
+        top: 1.25em;
+        right: 0;
+        margin: 0 1.5%;
+        height: 3em;
+        z-index: 5;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include bgcolor($color-transparent);
+        @include txcolor($color-white);
+
+        &.mission {
+            left: 4.5em;
+
+            h4 {
+                padding: 0.25em .5em .25em .75em;
+            }     
+
+            .target {
+                @include bgcolor($color-blue-stone);
+                @include txcolor($color-lemon);
+                display: flex;
+                align-items: center;
+                height: 2.5em;
+                border-radius: 3em;
+                margin-right: .25em;
+            }
+        }
+        
+        h4 {
+            font-family: 'Oswald', serif;
+            padding: 0.25em 1em .25em 0.5em;
+            margin: 0;
+            letter-spacing: 1px;
+            font-size: 1.25em;
+        }
+
+        #breadcrumb {
+            flex: auto;
+            text-align: start;
+            overflow: hidden;
+        }
+
+        // MENU
+        .dk-icon-menu {
+            width: 2em;
+            height: 2em;
+            @include txcolor($color-white);
+            border-radius: 0.7em 0 0.7em 0;
+            padding: 0.3em 0.2em;
+            transform: skew(-4deg);
+            background-image: linear-gradient(to bottom, rgba(48, 138, 255, 0.5), rgba(29, 96, 240, 0.5));
+            // box-shadow: 0 0 70px rgba(48, 138, 255, 0.5), 0 5px 20px rgba(48, 138, 255, 0.5), inset 0 1px #ffeca8, inset 0 -1px #ffeca8;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            cursor: pointer;
+
+            i {
+                font-size: 1.75em;
+            }
+
+            &:hover {
+                box-shadow: 0 0 70px rgba(48, 138, 255, 0.8), 0 5px 20px rgba(48, 138, 255, 0.8), inset 0 1px #a8ecff, inset 0 -1px #a8ecff;
+
+                &:before {
+                    box-shadow: inset 0 0 50px 0 #a8ecff;
+                }
+            }
+        }
+    }
+
+    // NAV
+    .dk-prev,
+    .dk-next,
+    .dk-prev-false,
+    .dk-next-false {
+        @extend %fixed;
+        top: 50%;
+        margin-top: -2em;
+        width: 4em;
+        height: 4em;
+        @include bgcolor($color-transparent);
+        @include txcolor($color-blue);
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dk-prev,
+    .dk-prev-false {
+        left: 1em;
+    }
+    .dk-next,
+    .dk-next-false {
+        right: 1em;
+    }
+
+    // PROGRESS BAR
+    #progressBar {
+        @extend %fixed;
+        bottom: 4px;
+        height: 5px;
+        width: 100%;
+        @include bgcolor($color-white);
+    }
+
+    #progressBar div {
+        width: 0;
+        height: 100%;
+        background-color: #00ffff;
+        box-shadow: 0 0 4px 0 #0ff, 0 0 4px 0 #0ff inset;
+        line-height: 22px;
+        text-align: right;
+    }    
+
+    // PROGRESS PIE
+    .dk-progress {
+        @include boxshadow;
+        @include interfax;
+        @include bgcolor($color-jagged-ice);
+        bottom: 2.5%;
+        right: 1%;
+        border-radius: 50%;
+    }
+}
+
+

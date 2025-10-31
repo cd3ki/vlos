@@ -1,0 +1,2032 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/placeholders";
+
+button {
+    font-family: 'Open Sans Condensed', sans-serif;
+    border: none;
+    cursor: pointer;
+
+    @include transition($transition-properties...);
+
+    &:hover {
+        @include scalebtn($transform-properties...);
+        z-index: 2;
+    }
+    &:focus {
+        outline:0;
+    }
+}
+
+/* ESPECIALS */
+.toukai {
+    display: none;
+}
+.disFlex {
+    display: flex;
+}
+
+// BGFX
+.bgKen {
+    @extend %absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.xVideo {
+  position: absolute;
+  min-width: 100%; 
+  min-height: 100%;
+  z-index: -1;
+}
+
+// BGIMAGES
+.bg101 {
+    @include bgimgpng(cover, "m1/m101-bg");
+}
+.bg101a {
+    @include bgimgsize(contain, "m1/m101-phone");
+}
+.bg102 {
+    @include bgimgpng(cover, "m1/m102-bg");
+}
+.bg103 {
+    @include bgimgpng(cover, "m1/m103-bg");
+}
+.bg104 {
+    @include bgimgpng(cover, "m1/m104-bg");
+}
+.bg104-tablet {
+    @include bgimgsize(contain, "m1/m104-tablet");
+}
+.bg105 {
+    @include bgimgpng(cover, "m1/m105-bg");
+}
+.bg107a {
+    @include bgimgpng(cover, "m1/m107a-bg");
+}
+.bg108 {
+    @include bgimgpng(cover, "m1/m108-bg");
+}
+.bg108-error {
+    @include bgimgpng(cover, "m1/m108-error");
+}
+.bg109 {
+    @include bgimgpng(cover, "m1/m109-bg");
+}
+.bg110 {
+    @include bgimgpng(cover, "m1/m110-bg");
+}
+.bg110new {
+    @include bgimgpng(cover, "m1/m110new-bg");
+}
+.bg111 {
+    @include bgimgpng(cover, "m1/m111-bg");
+}
+.bg120 {
+    @include bgimgpng(cover, "m1/m120-bg");
+}
+.bg121 {
+    @include bgimgpng(cover, "m1/m121-bg");
+}
+
+
+.popLeft {
+    height: 50vh;
+    border-radius: .5em 0 0 .5em;
+    border-right: 4px solid rgba(0,0,0,0.3);
+}
+
+
+.boxHolo {
+    @extend %relative;
+    padding: 1em;
+    border: 0px solid $color-white;
+    border-radius: .6em;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 5px 1px fade-out($color-white, .5), 0 0 5px 1px fade-out($color-white, .5) inset;
+
+    text-align: center;
+
+    .txFeed {
+        @include bgcolor(fade-out($color-white, .1));
+        margin: 0;
+        padding: .5em 1em;
+        border-radius: .6em;
+        box-shadow: 0 0 5px 1px $color-white, 0 0 5px 1px $color-white inset;
+    }
+
+    .tail {
+        @extend %absolute;
+        bottom: -36px;
+        left: calc(50% - 25px);
+        width: 50px;
+        height: 50px;
+        @include bgimgsize(cover, "props/tail");
+        opacity: .85;
+
+        -moz-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+
+        
+        &.L {
+            -moz-transform: rotate(90deg) scaleX(-1);
+            -webkit-transform: rotate(90deg) scaleX(-1);
+            transform: rotate(90deg) scaleX(-1);
+            bottom: 3em;
+            left: -30px;
+        }
+        &.R {
+            -moz-transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+            bottom: 3em;
+            left: inherit;
+            right: -30px;
+        }
+
+        &.T {
+            -moz-transform: rotate(-180deg);
+            -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+            bottom: inherit;
+            top: -45px;
+        }
+    }
+}
+
+// M104
+.dtod104 {
+    @extend %relative;
+    width: 100%;
+    justify-content: center;
+
+    .isdroppable {
+        width: 10em;
+        height: 8em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include bgimgsize(contain, "m1/m104-folder");
+        border: none;
+        
+        .dragword {
+            @include bgcolor($color-transparent);
+            cursor: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+        }
+    }
+}
+.drag104 {
+    .dragword {
+        @include bgcolor($color-transparent);
+        margin: .5em 2%;
+        padding: .5em .5em 0.3em;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1em;
+        cursor: move;
+
+        border: 1px solid green;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        -webkit-transform: skewX(-10deg);
+        transform: skewX(-10deg);
+        border-radius: 20px 5px 20px 0px;
+        text-shadow: 0 0 20px #fff;
+        letter-spacing: 2px;
+        
+        h5 {
+            margin: 0;
+            font-weight: 500;
+        }
+
+        &.ice {
+            border-color: #0ff;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(48, 138, 255, 0.5)), to(rgba(29, 96, 240, 0.5)));
+            background-image: linear-gradient(to bottom, rgba(48, 138, 255, 0.5), rgba(29, 96, 240, 0.5));
+            box-shadow: 0 0 70px rgba(48, 138, 255, 0.5), 0 5px 20px rgba(48, 138, 255, 0.5), inset 0 1px #ffeca8, inset 0 -1px #ffeca8;
+            color: #0ff;
+        }
+    }
+
+    // FEEDBACK
+    .feedPop {
+        width: 90%;
+        padding: 0;
+        margin: 0 auto;
+
+        .box {
+            padding: 1em 0;
+            color: $color-white;
+        }
+    }
+}
+//
+
+// M105
+.m105-box {
+    #plano-btn {
+        cursor: pointer;
+        opacity: .5;
+        animation: twinkle 3s ease infinite;
+        opacity: 1;
+    }
+}
+
+// M106
+.m106-plano {
+    box-shadow: 5px 5px 5px bgcolor($color-black);
+
+    #btn-postit {
+        opacity: .5;
+        animation: twinkle 3s ease infinite;
+        opacity: 1;
+    }
+
+    #btn-postit,
+    #but-axis01,
+    #but-axis02,
+    #but-axis03,
+    #but-axis04,
+    #but-axis05,
+    #but-axis06 {
+        cursor: pointer;
+    }
+
+    .viewed {
+        animation: none !important;
+        opacity: 0 !important;
+    }
+}
+
+// M107
+.m107-box {
+    #sd-btn,
+    #pic-btn {
+        cursor: pointer;
+        opacity: .5;
+        animation: twinkle 3s ease infinite;
+        opacity: 1;
+    }
+}
+
+// M108
+.m108-sombrilla {
+    #btn-section {
+        cursor: pointer;
+        opacity: .5;
+        animation: twinkle 3s ease infinite;
+        opacity: 1;
+    }
+}
+
+// M109
+.ddPuzzle {
+    @extend %relative;
+    @include bgimgsize(36em, "m1/m109-drop");
+    width: 36em;
+    height: 18em;
+    margin: 3em auto 0;
+    transform: rotate(-3deg);
+    box-shadow: 0 0 7px rgba(0,0,0,.2);
+
+    div {
+        width: 7em;
+        height: 7em;
+        // background-color: rgba(0,0,0,.5);
+        position: absolute;
+        display: block;
+        margin: 0;
+
+        &.isdroppable {
+            border: none;
+        }
+
+        // AFTER
+        img {
+            width: 100%;
+        }
+
+        &.x-drophover {}
+        &.x-related {
+            outline: none;
+        }
+    }
+
+    .dropA {
+        width: 12em;
+        height: 9em;
+        top: 5px;
+        left: 9px;
+    }
+    .dropB {
+        width: 9.68em;
+        height: 12em;
+        top: 4px;
+        left: 8.87em;
+    }
+    .dropC {
+        width: 15.1em;
+        height: 9em;
+        top: 4px;
+        right: 6.1em;
+    }
+    .dropD {
+        width: 9.4em;
+        height: 12em;
+        top: 3px;
+        right: 7px;
+    }
+    .dropE {
+        width: 9.25em;
+        height: 12.3em;
+        bottom: -2px;
+        left: 9px;
+    }
+    .dropF {
+        width: 15.15em;
+        height: 8.6em;
+        bottom: 14.46px;
+        left: 6.1em;
+    }
+    .dropG {
+        width: 9.58em;
+        height: 12em;
+        bottom: 3px;
+        right: 8.85em;
+    }
+    .dropH {
+        width: 11.9em;
+        height: 9.5em;
+        bottom: -3px;
+        right: 10px;
+    }
+}
+.dragPiece {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    .piece {
+        @include bgcolor($color-transparent);
+        border: none;
+        margin: 0 .5em;
+        transform: rotate(240deg);
+
+        &.rt20 {
+            transform: rotate(20deg);
+        }
+
+        &.rt140 {
+            transform: rotate(140deg);
+        }
+
+        img {
+            width: 5em;
+
+            &.w8 {
+                width: 8em;
+            }
+        }
+    }
+}
+
+// M110
+.m110-expertos {
+    #emilia-btn,
+    #sebastian-btn {
+        cursor: pointer;
+    }
+
+    .viewed {
+        animation: none !important;
+        opacity: 0 !important;
+    }
+}
+
+// M110-NEW
+.m110new-compu {
+    #btn01-bright {
+        opacity: .5;
+        animation: twinkle 3s ease infinite;
+        opacity: 1;
+    }
+
+    #btn01,
+    #btn02,
+    #btn03,
+    #btn04 {
+        cursor: pointer;
+    }
+
+    #btn02, #btn02-bright,
+    #btn03, #btn03-bright,
+    #btn04, #btn04-bright {
+        display: none;
+    }
+
+    .viewed {
+        animation: none !important;
+        opacity: 0 !important;
+    }
+}
+
+// BOXCOMIC
+.boxComic {
+    height: 26em;
+    margin: .5em;
+
+    @include bgcolor(fade-out($color-gray, 0.7));
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    align-items: flex-end;
+
+    &.sizeM {
+        height: 20em;
+    }
+
+    &.big {
+        width: 94%;
+        margin: 0 auto;
+        height: 80vh;
+        margin: 0;
+
+        .text {
+            padding: .5em .75em;
+        }
+    }
+
+    .text {
+        width: 100% !important;
+        padding: .5em .75em;
+        @include bgcolor($color-white);
+
+        p {
+            margin: 0;
+            font-size: .98em;
+            line-height: 1.15em;
+        }
+    }
+    
+    // M112
+    &.im112a {
+        @include bgimgsize(cover, "m1/m112a");
+    }
+    &.im112b {
+        @include bgimgsize(cover, "m1/m112b");
+    }
+    &.im112c {
+        @include bgimgsize(cover, "m1/m112c");
+    }
+
+    // M115
+    &.im115a {
+        @include bgimgsize(cover, "m1/m115a");
+    }
+    &.im115b {
+        @include bgimgsize(cover, "m1/m115b");
+    }
+    &.im115c {
+        @include bgimgsize(cover, "m1/m115c");
+    }
+
+    // M117
+    &.im117a {
+        @include bgimgsize(cover, "m1/m117a");
+    }
+    &.im117b {
+        @include bgimgsize(cover, "m1/m117b");
+    }
+    &.im117c {
+        @include bgimgsize(cover, "m1/m117c");
+    }
+}
+
+// QUESTION
+.pageQuestion {
+    border-radius: 0 0.75em 0 0.75em;
+    @include bgcolor(fade-out($color-white, .2));
+    transform: skew(-4deg);
+    @include boxshadow;
+    padding: 2em 2.5em 1.5em;
+
+    .shitsumon {
+        @include bgcolor($color-catalina-blue);
+        @include txcolor($color-white);
+        text-align: center;
+        margin: -2em -2.5em 1.5em;
+        padding: 3em 2.5em 1.5em;
+
+        h4 {
+            margin-bottom: .25em;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+        &.im002{
+            @include bgimgsize(10em, "m0/m002");
+        }
+        
+
+        &.im002 {
+            background-position: left top;
+        }
+    }
+
+    
+}
+
+ul.kotae {
+    li.answnamba {
+        @include bgimgsize(30px, "interfax/qkNone");
+        background-position: 0.2em 0.6em;
+        border-bottom: 2px solid $color-astronaut-blue;
+        padding: .75em .75em .75em 2.25em;
+        cursor: pointer;
+    
+        &:last-child { 
+            border: none;
+        }
+
+        &.qselected {
+            @include bgcolor(fade-out($color-jagged-ice, .6));
+            @include bgimg("interfax/qkSelected");
+        }
+    }
+}
+
+// M120
+.wordsearch {
+    .boxClue {
+        padding: 1em;
+        @include bgcolor(fade-out($color-white, .15));
+        border-radius: 0 0.75em 0 0.75em;
+         box-shadow: 0 0 10px rgba(48, 138, 255, 0.5), 0 5px 10px rgba(48, 138, 255, 0.5), inset 0 1px #ffeca8, inset 0 -1px #ffeca8;
+        backdrop-filter: blur(7px);
+
+        h4 {
+            @include bgcolor(#f8963e);
+            @include txcolor($color-white);
+            margin: -1em -1em 0;
+            padding: .5em 1.5em .25em;
+            letter-spacing: 2px;
+        }
+
+        .ws-words {
+            margin: 0 !important;
+
+            li {
+                border-bottom: 2px solid rgba(48, 138, 255, 0.5);
+                list-style: none;
+                padding: 0.5em 0.75em;
+            
+                &.acerto {
+                    @include bgcolor(fade-out($color-black, 0.9));
+                    @include bgimgsize(30px, "interfax/check");
+                    background-position: 98% 90%;
+                }
+            }
+        }
+    }
+    
+    .ws-soup {
+        margin: 0;
+        padding: 20px;
+        display: inline-block;
+
+        border-radius: 0 0.75em 0 0.75em;
+        background-image: linear-gradient(to bottom, rgba(48, 138, 255, 0.5), rgba(29, 96, 240, 0.5));
+        box-shadow: 0 0 70px rgba(48, 138, 255, 0.5), 0 5px 20px rgba(48, 138, 255, 0.5), inset 0 1px #ffeca8, inset 0 -1px #ffeca8;
+        @include bgcolor(fade-out($color-white, .7));
+        transform: skew(-4deg);
+        backdrop-filter: blur(7px);
+        
+        .ws-area {
+            -moz-user-select: -moz-none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+
+            .ws-row {
+                line-height: 0;
+            }
+
+            .ws-col {
+                cursor: pointer;
+            }
+
+            .ws-col.ws-selected {
+                background: #d23c69;
+            }
+
+            .ws-found {
+                background-color: #f8963e;
+                color: $color-white;
+            }
+        }
+    }
+}
+
+// CARDCOLOR
+.cardColor {
+    padding: 2em 3em 1.5em;
+    @include bgcolor($color-white);
+
+    &.farewell {
+        padding-left: 7.5em;
+    }
+}
+
+.dynamo {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        // border: 2px solid fade-out($color-lemon, .5);
+        @include bgcolor(fade-out($color-white, .5));
+        border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+
+        &:nth-child(1) {
+            animation: animate01 6s linear infinite;
+        }
+        &:nth-child(2) {
+            animation: animate02 8s linear infinite;
+        }
+        &:nth-child(3) {
+            animation: animate01 10s linear infinite;
+        }
+    }
+
+    .content {
+        position: relative;
+        padding: 10px 45px;
+        color: $color-font;
+        text-align: center;
+        transition: 0.5s;
+    }
+
+    .navDynamo {
+        @extend %absolute;
+
+        bottom: 1em;
+        left: calc(50% - 1.75em);
+    }
+}
+
+@keyframes animate01 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes animate02 {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+// BALLOON
+.balloon {
+    @extend %relative;
+    @include bgcolor($color-white);
+
+    -moz-box-shadow: inset 0 -.25em .5em fade-out($color-astronaut-blue, .7);
+    -webkit-box-shadow: inset 0 -.25em .5em fade-out($color-astronaut-blue, .7);
+    box-shadow: inset 0 -.25em .5em fade-out($color-astronaut-blue, .7);
+
+    padding: 3em 2.5em;
+
+    &.mini {
+        padding: .5em 2.5em;
+    }
+
+    .tail {
+        @extend %absolute;
+        bottom: -36px;
+        left: calc(50% - 25px);
+        width: 50px;
+        height: 50px;
+        @include bgimgsize(cover, "interfax/tail");
+
+        -moz-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+
+        
+        &.L {
+            -moz-transform: rotate(90deg) scaleX(-1);
+            -webkit-transform: rotate(90deg) scaleX(-1);
+            transform: rotate(90deg) scaleX(-1);
+            bottom: 2em;
+            left: -40px;
+        }
+        &.R {
+            -moz-transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+            bottom: 2em;
+            left: inherit;
+            right: -40px;
+        }
+
+        &.T {
+            -moz-transform: rotate(-180deg);
+            -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+            bottom: inherit;
+            top: -45px;
+        }
+    }
+
+    .navBallon {
+        @extend %absolute;
+
+        bottom: -1.5em;
+
+        &.migi {
+            right: 42%;
+        }
+    }
+}
+
+
+/* FeedMessage */
+.feedMessage {
+    // width: 100%;
+    margin: 1.25em -2.75em 0;
+
+    @extend %relative;
+
+    @include bgcolor($color-blue);
+    @include bdradius;
+
+    border: 3px solid $color-blue;
+
+    @include txcolor($color-white);
+
+    .important, .tip {
+        @extend %absolute;
+
+        top: -2px;
+        left: -3.5em;
+        width: 3.25em;
+        height: 3.25em;
+        border-radius: .5em;
+
+        @include bgimgsize(100%, "none");
+        border: 2px solid $color-blue;
+        @include bgcolor($color-blue);
+    }
+
+    .important {
+        @include bgimg("interfax/important");
+    }
+
+    .tip {
+        @include bgimg("interfax/tip");
+    }
+
+    .text {
+        margin: .125em 2em .125em 1.5em;
+    }
+}
+
+.videoFull {
+    @extend %relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    video {
+        @extend %absolute;
+        // width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+
+// M102
+.tiPop {
+    h1, h2, h4 {
+        color: $color-aqua;
+    }
+
+    h1, h2 {
+        font-weight: 700;
+        margin: 0; 
+    }
+    h4 {
+        margin: .25em 0; 
+    }
+}
+
+.iconMenu {
+    padding: 1em;
+    border-radius: 3em;
+    margin: 1.5em auto;
+    width: 4em;
+    height: 4em;
+}
+
+// M105
+.goFoward {
+    height: 2em;
+    width: 12em;
+    cursor: pointer;
+    background-color: #46b978;
+
+    border-radius: .5em;
+    color: #fff;
+    padding: 0.5em;
+    text-align: center;
+    align-items: center;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s; 
+
+    &.retroB {
+        padding: .75em 3em;
+        font-size: .8em;
+    }
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.actSelect {
+    @include bgcolor($color-white);
+
+    border: 3px solid $color-white;
+    
+
+    h4 {
+        font-family: 'Open Sans Condensed', sans-serif;
+        line-height: 1.5em
+    }
+
+    .padd {
+       padding: 1.25em 2em 0.2em;
+    }
+
+    ol {
+        margin: 1em 0 2em;
+
+        li {
+            margin: 1em;
+        }
+    }
+
+    label.dropdown {
+        display: inline-block;
+        position: relative;
+
+        &:after {
+            content:"\f107 ";
+            font-family: 'Font Awesome 5 Free';
+            color: $color-astronaut-blue;
+            width: 24px;
+            height: 100%;
+            position: absolute;
+            top: 6px;
+            right: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        select {
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: .9em;
+            letter-spacing: 0.02em;
+            padding: .25em 1.4em .25em .5em;
+            border-radius: .5em;
+            border: 0;
+            @include bgcolor(fade-out($color-boston-blue, 0.9));
+
+           -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+
+            &.fail {
+                border: 2px solid $color-magenta-feed;
+            }
+        }
+
+        &.disable {
+            @include bgcolor($color-transparent);
+
+            select {
+                @include bgcolor(fade-out($color-astronaut-blue, 0.9));
+                color: $color-astronaut-blue;
+                font-weight: 700;
+                border: none;
+            }
+
+            &:after {
+                content:"";
+            }
+        }
+    } 
+}
+
+
+// M102 - ACCORDION
+.accordion {
+    .accEntry {
+        padding: .125em 1.25em .25em;
+        width: 86%;
+        margin: 0 auto;
+    }
+
+    .accBtn {
+        letter-spacing: 1px;
+        text-align: left;
+        color: $color-gray-dark;
+        @include bgcolor($color-transparent);
+
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        
+        border-bottom: 2px solid $color-gray-light;
+        display: inline-block;
+        margin: 2px;
+
+        @include bgimgsize(30px, "none");
+        background-position: 95% center;
+
+        &.m102a {
+            @include bgimg("m1/m102a");
+        }
+        &.m102b {
+            @include bgimg("m1/m102b");
+        }
+        &.m102c {
+            @include bgimg("m1/m102c");
+        }
+        &.m102d {
+            @include bgimg("m1/m102d");
+        }
+        &.m102e {
+            @include bgimg("m1/m102e");
+        }
+
+        h5 {
+            display: inline-block;
+            line-height: 0;
+            padding: 0 1em;
+            font-weight: 700;
+        }
+    }
+}
+
+// 
+.cardWhite {
+    @extend %relative;
+    padding: 3em 3em 2em;
+
+    @include bgcolor($color-white);
+
+    .statementQ {
+        @include bgcolor($color-blue);
+        @include txcolor($color-white);
+
+        display: flex;
+
+        text-align: left;
+        margin: -3em -3.75em 1.5em;
+        padding: 2em 3.75em 1.5em;
+
+        h4 {
+            margin: 0;
+        }
+
+        p {
+            margin-top: 0;
+        }
+    }
+
+    ul.options {
+        li.answnamba {
+            @include bgimgsize(27px, "interfax/aNone");
+            background-position: 0.25em 0.7em;
+            border-bottom: 2px solid fade-out($color-blue, 0.5);
+            padding: .75em .75em .75em 2.25em;
+            cursor: pointer;
+
+            &.qselected {
+                @include bgimg("interfax/aSelected");
+                @include bgcolor(fade-out($color-blue, .95));
+            }
+        
+            &:first-child { 
+                border-top: 2px solid fade-out($color-blue, 0.5);
+            }
+        }
+    }
+
+    .helpers {
+        @extend %absolute;
+        bottom: 1em;
+        right: -2em;
+        width: 4em;
+
+        .b50,
+        .bCall {
+            @include bgcolor($color-blue);
+            @include txcolor($color-white);
+            @include boxshadow;
+            width: 4em;
+            height: 4em;
+            margin-bottom: .5em;
+            border-radius: 2em;
+        }
+    }
+
+    .qChoice {
+        .ansNamba {
+            @include bgimgsize(30px, "interfax/aNone");
+            background-position: 0.25em center;
+            border-bottom: 2px solid fade-out($color-blue, 0.5);
+            padding: .75em .75em .75em 2.25em;
+            cursor: pointer;
+
+            &.q-selected {
+                @include bgimg("interfax/aSelected");
+                border: 2px solid fade-out($color-blue, 0.5);
+                @include bdradius;
+            }
+        }
+
+        & div:nth-of-type(2){
+            border-top: 2px solid fade-out($color-blue, 0.5);
+        }
+    }
+}
+
+// M204
+.bxPop {
+    @include bgcolor(fade-out($color-white,.1));
+    padding: 2em 2em 1em;
+    box-sizing: border-box;
+    display: block;
+
+    &.m302 {
+        text-align: center;
+        color: $color-white;
+        @include bgcolor($color-blue);
+        padding: 1.5em 2em;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    &.m304 {
+        text-align: center;
+        color: $color-white;
+        @include bgcolor($color-blue);
+        padding: 1.5em 2em;
+
+        h4 {
+            margin: 0;
+        }
+    }
+}
+
+// M403
+.bdDashed {
+    outline: 2px dashed $color-gray;
+    box-sizing: border-box;
+
+    h4 {
+        margin: .25em 1em.4em;
+    }
+
+    button {
+        margin-bottom: .25em;
+    }
+}
+
+.mt209 {
+    h4 {
+        margin: 1em 0;
+    }
+}
+
+/* EVA */
+h3.actTitle {
+    margin: -.5em -2.75em 1em;
+    padding: 1em 3em .75em;
+    border-bottom: 4px solid #f4f9ff;
+    background-color: #0085b0;
+    color: #1d8cc2;
+    font-size: 1.5em;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+
+.qChoice {
+    .ansNamba {
+        background: url('../images/interfax/aNone.svg') no-repeat scroll 0.25em center / 30px 30px transparent;
+        border-bottom: 2px solid #efefef;
+        cursor: pointer;
+        padding: 10px 15px 10px 45px;
+    }
+
+    div:nth-child(2) { 
+        border-top: 2px solid #0085b0;
+    }
+
+    div.q-selected {
+        background: url('../images/interfax/aSelected.svg') no-repeat scroll 0.25em center/30px 30px transparent !important;
+        border: 2px solid #0085b0 !important;
+        border-radius: 6px !important;
+    }
+    
+    .multiple {
+        border-top: 2px solid #bcbcbc !important;
+        border-bottom: 2px solid #bcbcbc !important;
+    }
+}
+
+.verificar {
+    background: #0085b0 none repeat scroll 0 0;
+    cursor: pointer;
+    margin: 0.4em;
+    padding: .75em 1em;
+    color: #fff;
+    border-radius: .4em;
+}
+.verificar.hvr-outline-out::before {
+    border: 4px solid #0085b0;
+    border-radius: .4em;
+}
+.qTop {
+    background-image: url('../images/interfax/question.svg');
+    height:93px;
+    padding-top:27px;
+}
+
+.qTop h4, .qTop h5 {
+    margin: 0;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.dk-icon-noitem.dont-works {
+    cursor: default;
+}
+.dk-icon-noitem.dont-works:hover {
+    opacity: 1;
+}
+
+// X-TOOLTIP
+.contentTT {
+    @include bgcolor($color-blue-light);
+    @include txcolor($color-font);
+    @include bdradius;
+    padding: 1.5em 2em .5em;
+    width: 24em;
+    z-index: 20;
+}
+.ui-helper-hidden-accessible {
+    @extend %fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    display: none;
+
+    border: 0;
+    clip: rect(0 0 0 0);
+}
+// END X-TOOLTIP
+
+// M102
+.btn102 {
+    button {
+        @include bgcolor($color-transparent);
+    }
+}
+
+// M102
+.dtod102 {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    div {
+        width: 17em;
+        height: 12em;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        &.isdroppable {
+            border: none;
+        }
+
+        // AFTER
+        &.x-drophover {}
+
+        &.x-related {
+            outline: none;
+        }
+    }
+}
+
+.drag102 {
+    .dragObject {
+        @include bgcolor($color-transparent);
+        width: 100%;
+        cursor: move;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.isdroppable {
+    .m305 {
+        position: absolute !important;
+        z-index: -1;
+
+        &.drag01 {
+            left: 30px !important;
+            top: -52px !important;
+        }
+        &.drag02 {
+            left: 90px !important;
+            top: -62px !important;
+        }
+        &.drag03 {
+            left: 150px !important;
+            top: -72px !important;
+        }
+
+        &.drag04 {
+            left: 50px !important;
+            top: 74px !important;
+        }
+        &.drag05 {
+            left: 120px !important;
+            top: 32px !important;
+        }
+    }
+}
+
+.ddActivity {
+    width: 27em;
+    height: 25em;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+
+    div {
+        width: 10em;
+        height: 10em;
+        display: inline-flex;
+        margin: 0;
+        border: 2px solid $color-transparent;
+
+        &.barTrophy {
+            height: 1em;
+            width: 100%;
+            @include bgcolor($color-jagged-ice);
+        }
+
+        // AFTER
+        img {
+            width: 9em;
+            margin: 0 auto;
+        }
+
+        &.x-drophover {
+            @include bgcolor(fade-out($color-dandelion, .9));
+        }
+
+        &.x-related {
+            outline: none;
+        }
+
+        &.dropA {
+            @include bgimgsize(contain, "m3/m319drop-a");
+        }
+        &.dropB {
+            @include bgimgsize(contain, "m3/m319drop-b");
+        }
+        &.dropC {
+            @include bgimgsize(contain, "m3/m319drop-c");
+        }
+        &.dropD {
+            @include bgimgsize(contain, "m3/m319drop-d");
+        }
+
+        &.bgNone {
+            background: none;
+        }
+    }
+}
+
+.bgLuces {
+    &.A {
+        @include bgcolor(fade-out($color-black,.2));        
+    }
+    &.B {
+        @include bgcolor(fade-out($color-black,.45));        
+    }
+    &.C {
+        @include bgcolor(fade-out($color-black,.6));        
+    }
+    &.D {
+        @include bgcolor(fade-out($color-black,.75));        
+    }
+    &.E {
+        @include bgcolor(fade-out($color-black,.9));      
+    }
+}
+.dtod205 {
+    .dropA {
+        width: 4em;
+        height: 5em;
+        @include bgimgsize(cover, "m2/m205-drop");
+        border: none;
+        z-index: 2;
+    }
+    .dragObject {
+        width: 2em;
+        height: 3em;
+        @include bgimgsize(cover, "m2/m205-drag");
+        cursor: move;
+    }
+
+    .isdroppable {
+        .dragObject {
+            position: absolute !important;
+            left: calc(50% - 1em) !important;
+            bottom: -1em;
+            top: inherit !important;
+            cursor: inherit;
+        }
+    }
+}
+
+// mROll
+.m208 {
+    button {
+         @include bgcolor($color-transparent);
+    }
+}
+
+// M107
+.txtBoard {
+    @extend %absolute;
+    @include txcolor($color-white);
+    width: 40%;
+    height: 15vh;
+    border: 2px dashed $color-white;
+    top: 52vh;
+    left: 30%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+        margin: 0;
+    }
+}
+
+// M108
+.txtBoard02 {
+    @include txcolor($color-white);
+    width: 80%;
+    height: 12vh;
+    border: 2px dashed $color-white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+        margin: 0 1.25em;
+    }
+}
+// 
+.badgeAnimation {
+    img {
+        width: 11em;
+        border: 10px solid fade-out($color-white, 0.5);
+        border-radius: 6em;
+    }
+
+    .shine-me {
+        width: 11em;
+        height: 11em;
+        position: absolute;
+        margin-left: calc(50% - 5.5em);
+        border-radius: 6em;
+
+        -webkit-animation-name: ShineAnimation;
+        -webkit-animation-duration: 5s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: cubic-bezier(.12,.89,.98,.47);
+    }
+}
+
+@-webkit-keyframes ShineAnimation{
+    from {
+        background-repeat:no-repeat;
+        background-image:-webkit-linear-gradient(
+            top left,
+            rgba(255, 255, 255, 0.0) 0%,
+            rgba(255, 255, 255, 0.0) 45%,
+            rgba(255, 255, 255, 0.5) 48%,
+            rgba(255, 255, 255, 0.8) 50%,
+            rgba(255, 255, 255, 0.5) 52%,
+            rgba(255, 255, 255, 0.0) 57%,
+            rgba(255, 255, 255, 0.0) 100%
+        );
+        background-position:-250px -250px;
+        background-size: 600px 600px
+    }
+    to {
+        background-repeat:no-repeat;
+        background-position:250px 250px;
+    }
+}
+
+.wwMillionare {
+    @include txcolor($color-white);
+    margin: 2em 0;
+
+    .statementQ {
+        @include bgcolor($color-blue-dark);
+        border: .2em solid $color-white;
+        border-radius: .75em;
+
+        margin: 0 0 1em;
+        padding: 1em 2.25em;
+        text-align: center;
+
+        h4 {
+            margin: 0;
+        }
+    }
+
+    div.answnamba {
+        text-align: left;
+        @include bgcolor($color-blue-dark);
+        border: .2em solid $color-white;
+        padding: 1.2em 1.2em 1em 2.75em;
+        border-radius: .75em;
+        cursor: pointer;
+
+        &::before {
+            @include bgcolor($color-white);
+            @include txcolor($color-blue-dark);
+
+            font-weight: 700;
+            width: 1.5em;
+            height: 1.5em;
+            border-radius: 1em;
+
+            display: inline-flex;
+            align-content: center;
+            justify-content: center;
+
+            margin: 0 0.3em 0 -2em;            
+        }
+
+        &.opA::before {
+            content: "A";
+        }
+
+        &.opB::before {
+            content: "B";
+        }
+
+        &.opC::before {
+            content: "C";
+        }
+
+        &.opD::before {
+            content: "D";
+        }
+
+        p {
+            display: inline;
+            margin: 0;
+        }
+
+        &.ansRight {
+            @include bgcolor($color-green);
+        }
+
+        &.ansWrong {
+            @include bgcolor($color-red);
+        }
+
+        &.ansFriend {
+            @include bgcolor($color-blue);
+        }
+    }
+}
+
+.helpers {
+    margin-top: 1.5em;
+
+    .b50,
+    .bCall {
+        @include bgcolor($color-blue);
+        @include txcolor($color-white);
+        @include boxshadow;
+        width: 4em;
+        height: 4em;
+        margin: 0 .5em;
+        border-radius: 2em;
+    }
+}
+
+
+// INSTRUCTION
+.bxShadow {
+    box-shadow: .4em 0 0 fade-out($color-black, .85)
+}
+.meirei {
+    // @extend %absolute;
+    @include bgcolor($color-white);
+    @include txcolor($color-font);
+
+    width: 100%;
+    margin-top: 3.5em;
+
+    .instruction {
+        padding: 1em 1.5em 1em 2em;
+        text-align: left;
+        border-radius: 0 .75em .75em 0;
+        font-style: italic;
+        display: flex;
+        justify-content: center;
+
+        .captain {
+            width: 25%;
+        }
+        .text {
+            width: 75%;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+    button {
+        @extend %absolute;
+        right: 0;
+        margin-left: -1.5em;
+        top: calc(50% - 2em);
+        width: 4em;
+        height: 4em;
+        border-radius: 2em;
+
+        @include bgcolor($color-lemon);
+        @include txcolor($color-white);
+
+        padding: .5em;
+    }
+}
+
+// INTRO
+.boxIntro {
+    @extend %relative;
+    @include bgcolor(fade-out($color-white, .05));
+    text-align: center;
+
+    border: .25em solid $color-white;
+
+    // padding: 1.75em 2.5em 3em;
+    padding: 2.5em 4em 3.5em;
+
+    img {
+        width: 12em;
+        height: 8em;
+        margin-bottom: 1.25em;
+    }
+
+    .txFeed {
+        margin: 0;
+
+        button {
+            @extend %absolute;
+            left: 50%;
+            margin-left: -1.5em;
+            bottom: -2em;
+            width: 4em;
+            height: 4em;
+            border-radius: 2em;
+
+            @include bgcolor($color-lemon);
+            @include txcolor($color-white);
+
+            padding: .5em;
+        }
+    }
+}
+ 
+.bxPad {
+    padding: 5em 2.5em 0;
+}
+
+// X-TOOLTIP
+.ui-widget,
+.ui-widget-content,
+.ui-tooltip,
+.ui-corner-all {
+    background-color: transparent !important;
+    border: none !important;
+}
+.contentTT {
+    @include bgcolor($color-jagged-ice);
+    @include txcolor($color-astronaut-blue);
+    @include bdradius;
+    padding: 1.5em 2em 1.5em;
+    width: 24em;
+    z-index: 20;
+
+    p {
+        margin: 0;
+    }
+}
+.ui-helper-hidden-accessible {
+    @extend %fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    display: none;
+
+    border: 0;
+    clip: rect(0 0 0 0);
+}
+// END X-TOOLTIP
+
+// FLOATING
+.floatObject {
+    overflow: hidden;
+    animation: floating 6s ease-in-out infinite;
+
+    &.small {
+       animation: floatingSmall 6s ease-in-out infinite; 
+    }
+}
+@keyframes floating {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(-55px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
+}
+@keyframes floatingSmall {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(-25px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+
+// DDCONCEPTS
+.ddConcepts {
+    .concepts {
+        div {
+            @include bgcolor($color-flush-orange);
+            @include txcolor($color-white);
+            width: 100%;
+            border: none;
+            margin-bottom: .5em;
+
+            h4 {
+                font-size: 1.2em;
+                margin: .5em;
+            }
+
+            &.indrag {
+                @include bgcolor(fade-out($color-green, .2));
+            }
+        }
+    }
+
+    .meanings {
+        div {
+            h4 {
+                font-size: 1.4em;
+                margin: 0 0 .1em;
+                color: $color-green;
+                letter-spacing: 1px;
+                font-weight: 700;
+            }
+            p {
+                margin: 0;
+            }
+
+            &.x-drophover {
+                @include bgcolor(fade-out($color-green, .9));
+                border: 2px dashed;
+            }
+        }
+    }
+}
+
+.tableTitle {
+    padding: 5em 0 0.25em;
+    @include bgcolor($color-gris-claro);
+
+    &.odd {
+        @include bgcolor($color-gris-medio);
+    }
+}
+
+// M308
+.dtod308 {
+    width: 90%;
+
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    .isdroppable {
+        width: 8em;
+        height: 4em;
+        @include bgimgsize(contain, "m3/m308drop");
+        border: none;
+        position: relative !important;
+        margin-bottom: 2em;
+
+        &.filaTop {
+            padding-bottom: 8em;
+
+            .dragObject {
+                img {
+                    margin-bottom: 2em;
+                }
+            }
+        }
+
+        .dragObject {
+            position: absolute !important;
+            bottom: 45px;
+            left: 0 !important;
+            top: inherit !important;
+
+            img {
+                width: 6em;
+                margin-bottom: -2em;
+            }
+        }
+
+        // AFTER
+        &.x-drophover {}
+
+        &.x-related {
+            outline: none;
+        }
+    }
+
+    // FEEDBACK
+    .feedPop {
+        width: 80%;
+        padding: 1.5em;
+        margin: 0 auto;
+
+        .box {
+            @include bgcolor(fade-out($color-white,.1));
+            padding: 1em 1.5em 0.25em;
+        }
+    }
+}
+
+
+/* m409 */
+.fila-flex{
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    -moz-flex-direction: row;
+    flex-direction: row;
+}
+
+.columna-flex{
+    -ms-box-orient: vertical;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+}
+
+.centrar-horizontal{
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    -ms-flex-pack: center;
+    -moz-justify-content: center;
+    justify-content: center;
+}
+
+.drag {
+    color: #fff;
+    font-weight: bold;
+    padding: 0.75em;
+    margin: .25em;
+    background-color: $color-blue;
+    border-radius: .25em;
+    width: auto !important;
+    display: inline-block;
+}
+
+.dropp {
+    border: 2px solid #7b57ac !important;
+}
+
+.drop span {
+    width: 35px;
+    height: 35px;
+    font-size: 1.25em;
+    line-height: 33px;
+    text-align: center;
+    border: .5px solid #04adbf;
+    color: #3f3f3f;
+}
+
+.cajadrop {
+    position: absolute;
+    text-align: center;
+}
+
+button.numero {
+    cursor: pointer;
+
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    
+    background-color: $color-green-dark;
+    border-radius: 2.4em;
+    border: 2px solid $color-green-dark;
+
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+button.numero.h {
+    margin: 2px 2px;
+}
+
+button.numero.v {
+    margin: 0 0 4px 4px;
+}
+
+button.numero p {
+    margin: 0;
+}
+
+button.numero:hover {
+    transform: scale(1.05);
+}
+
+.cajadrop .drop{
+    border: 2px solid $color-green-dark;
+    text-align: center;
+}
+
+.boxCruci {
+    @extend %relative;
+
+    @include bgcolor(fade-out($color-white, .1));
+    padding: 2.5em; 
+    width: 560px;
+    margin: 0 auto;
+
+    .clue {
+        @extend %absolute;
+        width: 100%;
+        left: 0;
+        @include bgcolor($color-green-dark);
+        @include txcolor($color-white);
+        
+        .padd {
+            padding: 0 2em;
+            text-align: left;
+        }
+    }
+}
+
+.clue {
+    color: $color-white;
+    width: 100%;
+    padding: 2em 2.5em;
+    box-sizing: border-box;
+}
+
+.cajadrop1 {
+    left: 0;
+    top: 184px;
+    width: 548px;
+}
+.cajadrop1 .drop {
+    height: 36px;
+    width: 504px;
+}
+
+.cajadrop2 {
+    left: 76px;
+    top: 36px;
+}    
+.cajadrop2 .drop {
+    height: 288px;
+    width: 36px;
+}
+
+.cajadrop3 {
+    left: 436px;
+    top: 0;
+}    
+.cajadrop3 .drop {
+    height: 252px;
+    width: 36px;
+}
+
+.cajadrop4 {
+    left: 180px;
+    top: 256px;
+    width: 296px;
+}
+.cajadrop4 .drop {
+    height: 36px;
+    width: 252px;
+}
+
+.cajadrop5 {
+    left: 220px;
+    top: 108px;
+}    
+.cajadrop5 .drop {
+    height: 216px;
+    width: 36px;
+}

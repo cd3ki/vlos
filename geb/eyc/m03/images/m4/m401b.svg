@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 414 414" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="Artboard1" x="0" y="0" width="414" height="414" style="fill:none;"/>
+    <g id="Artboard11" serif:id="Artboard1">
+        <g transform="matrix(1.84426,0,0,1.84426,-219.655,-48.0615)">
+            <path d="M141.5,211.5L290,211.5C296.8,211.5 302.3,206 302.3,199.2L302.3,86.5C302.3,79.7 296.8,74.2 290,74.2L284,74.2L284,68.5C284,66.6 282.5,65.1 280.6,65.1L235.7,65.1C233.8,65.1 232.3,66.6 232.3,68.5L232.3,74.2L141.5,74.2C134.7,74.2 129.2,79.7 129.2,86.5L129.2,199.2C129.2,206 134.8,211.5 141.5,211.5Z" style="fill:url(#_Linear1);"/>
+            <path d="M272.1,200.5L148.3,200.5C142.8,200.5 138.3,196 138.3,190.5L138.3,94.8C138.3,89.3 142.8,84.8 148.3,84.8L272.1,84.8C277.6,84.8 282.1,89.3 282.1,94.8L282.1,190.6C282.2,196 277.7,200.5 272.1,200.5Z" style="fill:white;"/>
+            <path d="M156.3,211.5L293.4,211.5C300.2,211.5 307.1,206 308.8,199.2L333.1,102.2C334.8,95.4 330.7,89.9 323.9,89.9L316.7,89.9L318.2,83.8C318.8,81.3 317.3,79.3 314.8,79.3L264.8,79.3C262.3,79.3 259.8,81.3 259.2,83.8L257.7,89.9L186.8,89.9C180,89.9 173.1,95.4 171.4,102.2L147.1,199.2C145.4,206 149.6,211.5 156.3,211.5Z" style="fill:url(#_Linear2);"/>
+        </g>
+    </g>
+    <defs>
+        <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(12.7555,-172.598,172.598,12.7555,209.463,228.248)"><stop offset="0" style="stop-color:rgb(125,120,247);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(82,82,201);stop-opacity:1"/></linearGradient>
+        <linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-29.0303,184.522,-184.522,-29.0303,247.572,103.506)"><stop offset="0" style="stop-color:rgb(125,120,247);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(82,82,201);stop-opacity:1"/></linearGradient>
+    </defs>
+</svg>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns:serif="http://www.serif.com/"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1273.7px"
+	 height="721.9px" viewBox="0 0 1273.7 721.9" style="enable-background:new 0 0 1273.7 721.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#000A12;}
+	.st1{fill:#5A6061;}
+	.st2{fill:none;stroke:#5A6061;stroke-width:6.1246;stroke-miterlimit:10;}
+	.st3{fill:url(#SVGID_1_);}
+</style>
+<g>
+	<g>
+		<g>
+			<g>
+				<path class="st0" d="M11.9,671.9L12,54c0-22.5,18.4-40.8,40.8-40.8l1165,0.2c22.5,0,40.8,18.4,40.8,40.8l-0.1,617.9
+					c0,22.5-18.4,40.8-40.8,40.8l-1165-0.2C30.2,712.7,11.9,694.4,11.9,671.9z"/>
+				<path class="st1" d="M1199.6,427.8l0-129.2c0-2.7,2.2-4.8,4.8-4.8l0,0c2.7,0,4.8,2.2,4.8,4.8l0,129.2c0,2.7-2.2,4.8-4.8,4.8l0,0
+					C1201.8,432.6,1199.6,430.4,1199.6,427.8z"/>
+				<path class="st1" d="M1228,371c4.3,0,7.9-3.5,7.9-7.8c0-4.3-3.5-7.9-7.9-7.9c-4.3,0-7.9,3.5-7.9,7.9
+					C1220.2,367.5,1223.7,371,1228,371z"/>
+				<path class="st1" d="M1206.3,254.6c5.3,0,9.7-4.3,9.7-9.7c0-5.3-4.3-9.7-9.7-9.7c-5.3,0-9.7,4.3-9.7,9.7
+					C1196.6,250.3,1201,254.6,1206.3,254.6z"/>
+				
+					<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -232.8307 163.842)" class="st2" cx="81.4" cy="363" rx="38.8" ry="38.8"/>
+			</g>
+		</g>
+	</g>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="143.5468" y1="15.4899" x2="1177.7747" y2="710.1216">
+		<stop  offset="3.438748e-03" style="stop-color:#BF3591"/>
+		<stop  offset="0.2092" style="stop-color:#AB3C95"/>
+		<stop  offset="0.629" style="stop-color:#764FA0"/>
+		<stop  offset="1" style="stop-color:#4460AB"/>
+	</linearGradient>
+	<rect x="147.6" y="19.5" class="st3" width="1027.6" height="687.6"/>
+	<g>
+		<defs>
+			<rect id="SVGID_2_" x="147.6" y="19.5" width="1027.6" height="687.6"/>
+		</defs>
+		<clipPath id="SVGID_3_">
+			<use xlink:href="#SVGID_2_"  style="overflow:visible;"/>
+		</clipPath>
+	</g>
+</g>
+</svg>

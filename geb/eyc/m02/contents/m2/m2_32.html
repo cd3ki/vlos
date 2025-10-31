@@ -1,0 +1,239 @@
+<div class="bgKen bg232"></div>
+
+<div class="row middle-xs start-xs">
+    <div class="col-2"></div>
+    <div class="col-5">
+        <div class="ddPuzzle">
+            <div class="isdroppable x-drop dropA" data-option="A"></div>
+            <div class="isdroppable x-drop dropB" data-option="B"></div>
+            <div class="isdroppable x-drop dropC" data-option="C"></div>
+            <div class="isdroppable x-drop dropD" data-option="D"></div>
+        </div>
+    </div>
+    
+    <div class="col-1">
+        <!-- PIECES -->
+        <div class="dragPiece w100 mgCenter mt1">
+            <div class="x-drag piece rt140" data-option="D">
+                <img src="images/m2/m232d-drag.svg">
+            </div>
+
+            <div class="x-drag piece rt20" data-option="C">
+                <img src="images/m2/m232c-drag.svg">
+            </div>
+
+            <div class="x-drag piece" data-option="A">
+                <img src="images/m2/m232a-drag.svg">
+            </div>
+
+            <div class="x-drag piece" data-option="B">
+                <img src="images/m2/m232b-drag.svg">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Feedback /-->
+<div id="x-feedback_panel" class="x-feedback_panel"></div>
+<!-- // -->
+
+<!-- SCENE 01 -->
+<div class="vBeam blur sc01 ovHidden">
+    <div class="row middle-xs center-xs">
+        <div class="col-4 ml2">
+            <div class="holoContainer animated fadeInUp delay1">
+                <div class="character animated fadeInUp delay2">
+                    <img src="images/props/carter-hologram.png">
+                    <img src="images/props/carter-hologram-green.png">
+                    <img src="images/props/carter-hologram-red.png">
+                </div>
+
+                <div class="x-svg-holo"></div>
+            </div>
+        </div>
+
+        <div class="col-3 mt1 speech01">
+            <!-- SC01 -->
+            <div class="boxHolo animated fadeIn delay3">
+                <div class="txFeed">
+                    <p>Gustavo ha destrozado una fotografía de quién parece ser su líder. Esta podría ser la persona clave en la organización F.F.</p>
+
+                    <p><b>Arma la fotografía arrastrando las piezas</b> y descubre cómo podemos reportar una situación de conflicto de interés.</p>
+                </div>
+
+                <div class="glitch-nav holoChat animated fadeInLeft delay4 x-goTag" data-tag="clk01-232">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+            </div>
+            <!-- // -->
+        </div>
+
+        <div class="col-3 mt3 speech02 toukai">
+            <!-- SC01 -->
+            <div class="boxHolo animated fadeIn delay3">
+                <div class="txFeed">
+                    <p>Este es Adolf Fraude, el líder del F.F. supongo que a él querían enviar toda la información junto con nuestra <a class="OpenTab" href="files/m232_PoliticaAdministracionConflictosDeIntereses.pdf" target="_blank">Política</a> de Administración de Conflicto de Interés.</p>
+                </div>
+
+                <div class="glitch-nav holoChat animated fadeInLeft delay4 x-jump" data-jump="m2_33">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+            </div>
+            <!-- // -->
+        </div>
+        <div class="col-1"></div>
+    </div>
+</div>
+
+<!-- FEEDBACK -->
+<!-- FEED01 -->
+<div id="feedback_A" class="toukai">
+    <div class="x-on_top_content vBeam blur animated fadeIn">
+        <div class="row middle-xs center-xs">
+
+            <div class="col-4">
+
+                <!-- POPINFO -->
+                <div class="boxPop">
+                    <!-- CLOSEBTN -->
+                    <div class="x-close_feed glitch-nav closePopUps">
+                        <i class="fa fa-times-circle"></i>
+                    </div>
+                    <!-- // -->
+
+                    <div class="row center-xs middle-xs">
+                        <div class="col-4 bgWhite image">
+                            <div class="row center-xs middle-xs">
+                                <div class="col-10">
+                                    <img src="images/m2/m232a-drag.svg" class="w100 mt1 mb1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-8">
+                            <div class="bgCatalinaBlue content txWhite">
+                                <p>Algunas situaciones relacionadas con el conflicto de intereses u otros dilemas éticos no siempre son obvias o fáciles de solucionar. En caso de que se te presente alguna, consúltala cuanto antes con tu jefe inmediato o con el <b>Director de Cumplimiento</b>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- FEED02 -->
+<div id="feedback_B" class="toukai">
+    <div class="x-on_top_content vBeam blur animated fadeIn">
+        <div class="row middle-xs center-xs">
+
+            <div class="col-4">
+
+                <!-- POPINFO -->
+                <div class="boxPop">
+                    <!-- CLOSEBTN -->
+                    <div class="x-close_feed glitch-nav closePopUps">
+                        <i class="fa fa-times-circle"></i>
+                    </div>
+                    <!-- // -->
+
+                    <div class="row center-xs middle-xs">
+                        <div class="col-4 bgWhite image">
+                            <div class="row center-xs middle-xs">
+                                <div class="col-10">
+                                    <img src="images/m2/m232b-drag.svg" class="w100 mt1 mb1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-8">
+                            <div class="bgCatalinaBlue content txWhite">
+                                <p>Los administradores, colaboradores, proveedores y contratistas también podrán reportar una conducta de conflicto de interés por medio del Canal Ético siguiendo el procedimiento establecido.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- FEED03 -->
+<div id="feedback_C" class="toukai">
+    <div class="x-on_top_content vBeam blur animated fadeIn">
+        <div class="row middle-xs center-xs">
+
+            <div class="col-4">
+
+                <!-- POPINFO -->
+                <div class="boxPop">
+                    <!-- CLOSEBTN -->
+                    <div class="x-close_feed glitch-nav closePopUps">
+                        <i class="fa fa-times-circle"></i>
+                    </div>
+                    <!-- // -->
+
+                    <div class="row center-xs middle-xs">
+                        <div class="col-4 bgWhite image">
+                            <div class="row center-xs middle-xs">
+                                <div class="col-10">
+                                    <img src="images/m2/m232c-drag.svg" class="w100 mt1 mb1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-8">
+                            <div class="bgCatalinaBlue content txWhite">
+                                <p>Todos los administradores y colaboradores del GEB deberán <b>informar y firmar una declaración de conflicto de interés anualmente</b>, de acuerdo con lo estipulado en el Código de Ética.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- FEED04 -->
+<div id="feedback_D" class="toukai">
+    <div class="x-on_top_content vBeam blur animated fadeIn">
+        <div class="row middle-xs center-xs">
+
+            <div class="col-4">
+
+                <!-- POPINFO -->
+                <div class="boxPop">
+                    <!-- CLOSEBTN -->
+                    <div class="x-close_feed glitch-nav closePopUps">
+                        <i class="fa fa-times-circle"></i>
+                    </div>
+                    <!-- // -->
+
+                    <div class="row center-xs middle-xs">
+                        <div class="col-4 bgWhite image">
+                            <div class="row center-xs middle-xs">
+                                <div class="col-10">
+                                    <img src="images/m2/m232d-drag.svg" class="w80 mgCenter mt1 mb1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-8">
+                            <div class="bgCatalinaBlue content txWhite">
+                                <p>Los conflictos de interés que involucren al Director de Cumplimiento o a alguno de los miembros del Comité de Ética, deberán ser evaluados directamente por el <b>Comité de Auditoría y Riesgos</b> o quien haga sus veces en la empresa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // -->
+            </div>
+
+        </div>
+    </div>
+</div>

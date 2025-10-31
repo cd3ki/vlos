@@ -1,0 +1,84 @@
+<div class="bgKen bg120"></div>
+<div class="row middle-xs center-xs wordsearch">
+    <!-- WS -->
+    <div class="col-5">
+        <div class="ws-soup">
+            <section id="ws-area"></section>
+        </div>
+    </div>
+
+    <div class="col-5 ml1 txLeft">
+        <div class="boxClue txRight">
+            <h4>Pistas</h4>
+            <ul class="ws-words txLeft">
+                <li class="ws-word">En este eje desarrollamos mecanismos que permiten monitorear la debida y diligente gestión y aplicación de las recomendaciones entregadas desde el área de Cumplimiento.</li>
+                <li class="ws-word">Es la persona natural o jurídica, pública o privada que, sola o en asocio con otros, decide sobre el tratamiento y las bases de datos.</li>
+                <li class="ws-word">Este principio significa que el tratamiento de datos personales es una actividad reglada que debe sujetarse a lo establecido en la normativa vigente.</li>
+                <li class="ws-word">Reconoce y protege el derecho que tienen todas las personas a conocer, actualizar y rectificar toda la información que se haya recogido sobre ellas en diferentes bases de datos o archivos que sean utilizados por entidades públicas o privadas.</li>
+                <li class="ws-word">Gobierno y cultura, Metodología, Políticas y procedimientos, Comunicación y entrenamiento, Sistemas de información y Monitoreo. Son los 6 _____ del programa de ética y cumplimiento de Grupo Energía Bogotá.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-1"></div>
+    <!-- // -->
+</div>
+
+<!-- SCENE 01 -->
+<div class="vBeam blur sc01">
+    <div class="row middle-xs center-xs">
+        <div class="col-4 ml2">
+            <div class="holoContainer animated fadeInUp delay1">
+                <div class="character animated fadeInUp delay2">
+                    <img src="images/props/carter-hologram.png">
+                    <img src="images/props/carter-hologram-green.png">
+                    <img src="images/props/carter-hologram-red.png">
+                </div>
+
+                <div class="x-svg-holo"></div>
+            </div>
+        </div>
+
+        <div class="col-3 mt1">
+            <!-- SC01 -->
+            <div class="boxHolo animated fadeIn delay3 speech01">
+                <div class="txFeed">
+                    <p><span class="x-username"></span>, estamos a un paso de datrapar a Sanders que se esconde en este búnker. Antes, es necesario que resolvamos una sopa de letras para desbloquear la puerta de acceso.</p>
+
+                    <p><b>Lee las pistas y encuentra el término asociado</b> arrastrando el puntero sobre la palabra.</p>
+                </div>
+
+                <div class="glitch-nav holoChat animated fadeInLeft delay4 x-goTag" data-tag="clk01-sopa">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+            </div>
+
+            <!-- SC02 -->
+            <div class="boxHolo animated fadeIn delay3 speech02 toukai">
+                <div class="txFeed">
+                    <h4 class="mt1">¡Excelente, <span class="x-username"></span>!</h4>
+
+                    <p>Llegó el momento de capturar a Franz Sanders y conocer dónde tienen a Good Ethics.</p>
+                </div>
+
+                <div class="glitch-nav holoChat animated fadeInLeft delay4 x-jump" data-jump="m1_21">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+            </div>
+            <!-- // -->
+        </div>
+        <div class="col-1"></div>
+    </div>
+</div>
+
+<script>
+    var default_settings = {
+        'directions': ['W', 'N'],
+        'gridSize': 12,
+        'words': ['Monitoreo','Responsable','Legalidad','HabeasData','Ejes'],
+        'debug': false
+    }
+    $(function(){
+        var gameAreaEl = document.getElementById('ws-area');
+        var gameobj = gameAreaEl.wordSearch();
+    });
+</script>
